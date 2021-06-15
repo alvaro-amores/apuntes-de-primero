@@ -1,0 +1,49 @@
+vistas son virtualizaciones, no generan datos, una vista puede llamar a otra vista nos ayuda a visualizar datos
+podemos visualizar calculos,( es una vista de un select es decir sin tener que volver ese consulta) se usa poco
+solo por ejemplo si  usamos mucho esa consulta
+colum list[listamos la columna que queremos usar] nombre_futbolista(tabla) lo ultimo
+las transaciones modifcan nuestra base de datos.
+ascid= atomicidad, coherencia, aislamiento, permanencia(atomicity, consistency,isolation,durability)
+que hace el autocommit1= hacer siempre commit cuando empezamos o no
+autocommit0= no las hace hasta que no confirmemos(no hay commit) si le ponemos no hace commit no se guardan las
+actualizaciones si lo queremos controlar hay que ponerlo a 0
+savepoint= si falla la transaccion vuelve a este punto por jemplo
+roll back to febrero= solo veremos hasta este punto de guardado 
+(el fallo es porque una vez que llamamos al commit estamos confirmando todos los puntos de salvado
+anteriores commit es la afirmacion. save point es por si es muy larga y nos confundimos  y roll back para volver a un savepoint
+commit es lo ultimo despues de commit no podemos volver a atras)
+con el rollback podemos volver a intrucciones anteriores cuando queramos.
+dml=data modification language= modificaciones= insert, update,alter, delete,(0)
+dcl=data control language=control=select(1)
+ddl=data definitionlanguage= definicion= create(1)
+si nos conectamos a la misma base de datos dos compañeros pueden suceder bloqueos
+read uncommitted= todas las transaciones que se estan haciendo se leen por otras transacioness
+read commited= los datos leidos por una transacion pueden ser modificadas por otras
+Nivel de aislamiento Lecturas sucias Lecturas  no repetibles  Lecturas fantasma
+READ UNCOMMITTED     SÍ                                            SÍ                                     SÍ
+READ COMMITTED     NO                                                 Si                                    SÍ
+REPEATEABLE READ    NO                                         NO                                      SÍ
+SERIALIZABLE                NO                                                     NO                                     NO
+
+
+
+dentro de los procedimientos haremos los savepoints y los rollback justo antes de cada operacion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

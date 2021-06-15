@@ -1,0 +1,61 @@
+https://ikastaroak.birt.eus/edu/argitalpen/backupa/20200331/1920k/es/ASIR/PAR/PAR02/es_ASIR_PAR02_Contenidos/website_8_dominios_de_colisin_y_difusin.html
+https://www.mikroways.net/2009/08/05/configuracion-de-vlans-con-cisco/   creacion de vlan en cisco
+https://www.ochobitshacenunbyte.com/2018/12/04/los-42-comandos-mas-importantes-en-gnu-linux/   42 comandos linux que me tengo que memorizar
+https://tldp.org/pub/Linux/docs/ldp-archived/system-admin-guide/translations/es/html/ch04s03.html   directorio etc explicado
+https://soploslinux.com/que-hacer-despues-de-instalar-ubuntu-20-04-focal-fossa/   consejos post instalacion
+https://www.muylinux.com/2014/04/01/compartir-carpetas-ubuntu-windows-samba/   compartir carpetas entre samba y linux
+https://www.sololinux.es/instalar-samba-en-ubuntu-20-04-focal-y-derivados/   instalacion samba
+http://recursostic.educacion.es/observatorio/web/eu/equipamiento-tecnologico/hardware/280-francisco-javier-estelles   discos duros
+https://docs.microsoft.com/es-es/windows-server/identity/ad-ds/plan/security-best-practices/appendix-b--privileged-accounts-and-groups-in-active-directory        privilegios
+https://www.tokioschool.com/noticias/que-es-una-red-informatica/#:~:text=Una%20red%20inform%C3%A1tica%20consiste%20en,de%20receptor%20de%20manera%20alterna. red informatica
+C:\Users\amore\Desktop\pp resumenes\cadiz.mhtml  cluster servidores
+https://www.beep.es/blog/conexiones-usb-todo-lo-que-necesitas-saber/   USBS
+https://www.daypo.com/asir-uned-padr-general.html tests sergio
+https://eltallerdelbit.com/servidor-dhcp-packet-tracer/  configurar packet tracer
+https://www.adictosaltrabajo.com/2010/09/03/joinsgraficos/  conjuntos sql
+https://www.enmimaquinafunciona.com/pregunta/120918/1204-en-virtualbox-sin-acceso-a-internet-en-el-sistema-operativo-huesped     conexion putty
+http://librosnetworking.blogspot.com/2016/05/ip-helper-address.html chuleta cisco
+https://www.ibiblio.org/pub/linux/docs/LuCaS/Manuales-LuCAS/doc-curso-salamanca-admin-avanzada/html/ch05s02.html grupos de volumen
+https://es.ccm.net/faq/2759-configuracion-basica-de-un-router-cisco   mas cisco congifurar ip routers
+https://www.mikroways.net/2010/06/16/lvm-crear-y-expandir-volumenes/   mdadm
+https://javier53348.cubava.cu/2018/10/25/montar-particion-de-forma-permanente/ mdadm montaje permanente
+https://todopacketracer.com/2011/06/06/configurar-rip/ pt
+https://www.solvetic.com/tutoriales/article/8330-como-instalar-chrome-en-ubuntu-20-04/  google ubuntu
+https://www.sololinux.es/instalar-y-configurar-samba-en-ubuntu/ linux definitivo
+https://sistemasyoperativos.com/2018/03/16/t6-directivas-de-grupo/ windows server 2016 directiavs
+https://josejuansanchez.org/bd/ejercicios-consultas-sql/index.html sql ejercicios
+https://eltallerdelbit.com/ruta-estatica-packet-tracer/  ip route
+https://www.eniun.com/sistema-columnas-contenedores-rejillas-bootstrap/#:~:text=El%20sistema%20de%20contenedores%20o,y%20con%20un%20ancho%20fijo.boostraps row-col.
+https://eltallerdelbit.com/comandos-router-cisco/#comandos_dhcp_cisco  comandos
+https://www.solvetic.com/tutoriales/article/4018-instalar-samba-ubuntu-linux-compartir-windows-10/   SAMBA POR FIN!!
+https://webdesign.tutsplus.com/es/tutorials/how-to-build-a-full-screen-responsive-carousel-slider-with-owljs--cms-31771 carrousel pantalla completa
+https://ubuntinux.blogspot.com/2019/09/comando-cd-en-linux.html comando linux cd
+https://codepen.io/ahelja/pen/jqgGvQ  cookie
+https://www.ibiblio.org/pub/linux/docs/LuCaS/Tutoriales/NOVATO/novato-a-novato/novato-a-novato-10.html   lista comandos linux
+https://blog.inittab.org/administracion-sistemas/lvm-para-torpes-ii/  raids comandos
+https://es.linux-console.net/?p=1904  mas raids
+https://www.profesionalreview.com/2019/01/24/tecnologia-raid/
+https://eltallerdelbit.com/clientes-smb-samba/   --- windows samba
+https://networkengineering.stackexchange.com/questions/35638/how-can-i-configure-l3-switch-and-dhcp-server----(L3)
+http://cidecame.uaeh.edu.mx/lcc/mapa/PROYECTO/libro21/513_diferencia_entre_una_base_de_datos_centralizada_y_una_distribuida.html (centralizada distribuida)
+
+https://ikastaroak.birt.eus/edu/argitalpen/backupa/20200331/1920k/es/ASIR/PAR/PAR02/es_ASIR_PAR02_Contenidos/website_8_dominios_de_colisin_y_difusin.html--repaso de redes muy bueno
+https://www.prometec.net/raspberry-pi-servidor/   buen tutorial php
+
+https://pedropablomoral.com/raspberrypi/proyectos/servidor-casero/   servidor raspberry
+https://rm-rf.es/limitar-recursos-por-usuario-en-mysql/   usuario sql privi limitaciones
+
+https://geeks.ms/juansa/2011/09/15/carpetas-seguridad-acceso-y-replicacin/ ntfs segu
+https://windowserver.wordpress.com/2011/04/30/permisos-permisos-efectivos/
+https://blogs.msmvps.com/juansa/blog/2006/01/18/los-permisos-ntfs-de-archivos-y-carpetas/
+https://windowserver.wordpress.com/2015/10/22/windows-server-administrador-de-tareas-muestre-actividad-de-discos/
+https://www.solvetic.com/tutoriales/article/3753-monitorizar-ancho-de-banda-redes-windows-server-2016/
+https://securitytwins.com/2019/10/22/configurando-copia-de-seguridad-en-windows-server-2016/
+https://hardzone.es/tutoriales/rendimiento/monitor-rendimiento-windows-10/
+https://web.mit.edu/rhel-doc/4/RH-DOCS/rhel-isa-es-4/s1-philosophy-document.html
+
+
+
+
+
+

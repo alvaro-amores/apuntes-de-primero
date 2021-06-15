@@ -1,0 +1,38 @@
+instalar phpadmin y ldap
+primer paso instalar slapd y utilidades:
+apt install slapd ldap-utils -y
+slapcat(veremos si el dominio esta instalado correctamente, como seguramente no
+porque no lo teniamos creados el comando de LUEGO sera clave
+
+ya se podria manejar el dominio pero mejor por interfaza y para eso necesitamos:
+apt-get install phpldapadmin
+una vez instalado deberemos editar el archivo /etc/phpldapadmin/config.php
+para configurar que se conecte directamente al dominio
+hay que editar dos lineas del archivo:
+array of base dns of your ldap server. leave this blank to have autodetect it for you*/
+y ponemos:el nombre del domino:
+$servers->setvalue('server','base',array('dc=casa,dc=local'));
+(casa local son ejemplo podria ser tambien de 3 dc ej: www.dominio.com
+segundo linea que tienes que modificar:
+....auth_type, them you can also specify the bind_id/bien_pass here for searching
+the directory dor users (ie, if your ldap server does not allow anonymous binds */
+$servers->setvalue('login','bind_id','cn=admin,dc=casa,dc=local');
+$servers->setvalue('login','bind_id','cn=,dc=example,cd=com');
+(cn sera el nombre del usuario, aqui yo solo rellene la primera linea)
+despues de hacer estos cambios reiniciamos apache: systemctl restart apache2
+ahora nos conectamos poniendo en google:\10.0.2.15\phpldapadmin(ej)
+***********
+ami esto no me funciono en un principio cuando ponia slapcat no me salia
+ningun dominio salia "nodomain" solucion:
+sudo dpkg-reconfigure slapd y vuelvo a nombrar el dominio,(despues tendras que volver a configurar: /etc/phpldapadmin/config.php y poner nombre de dominio correctamente
+**********************************
+tambien instale kerberos que de todas maneras es necesario pero que no creo que influyera.
+ apt install krb5-kdc krb5-admin-server krb5-config
+(y puse el mismo nombre que mi dominio www.medisdev.local) despues poner:
+krb5_newrealm, creara la base de datos
+despues configurar este archivo  vim /etc/krb5kdc/kadm5.acl(o sudo nano)
+ y borrar la ultima linea(te lo dice el en ingles)
+instalar usuarios kerberos y añadir uno
+apt install krb5-user
+addprinc alvaro
+(hice hasta aqui)

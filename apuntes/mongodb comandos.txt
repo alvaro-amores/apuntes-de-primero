@@ -1,0 +1,8 @@
+help.()---- comando ayuda
+show dbs----enseña 
+use nombre de la base de datos---- crear base de datos pero no se guarda,debemos meter un dato
+db.dropDatabase ()----- borra la base de datos en la que estas en ese momento.
+db.pruebainsert()----- para insertar,meter datos prueba es el ejemplo ira el nombre de la bd
+db.prueba.find()-----mostrara los datos insertados.
+db.prueba.remove()----dentro tenemos que poner el registro que queremos remover.
+db.prueba.find().pretty()-----ordenado

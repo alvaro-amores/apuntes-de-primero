@@ -1,0 +1,61 @@
+Los requisitos son cada una de las condiciones que definen al producto o componente. Estos requisitos son seleccionados por el analistas Estos requisitos son definidos por los analistas teniendo en cuenta la información proporcionada por el product owner, es decir, la información recogida en una entrevista previa con el cliente. A cada requisito se le asigna una calificación (esencial, deseable u opcional). A continuación, se muestran las distintas categorías en las que se clasifican los requisitos:
+	
+Requisitos funcionales: definen la funcionalidad básica del componente lo que hace el producto un ejemplo en nuestro producto seria: la aplicación tiene que ser capaz de mostrar el menú, ofrecer los precios, informar al cliente de los minutos que faltan para que llegue su pedido, ofrecer zona para puntuar el servicio, la comida y dejar comentarios.
+Requisitos de usuario: requerimientos que definen las opciones del interfaz de usuario un 
+Ejemplo: el usuario será capaz de realizar a pedidos de comida a través de la herramienta, el usuario será capaz de valorarnos, el usuario será capaz de hacer sugerencias, conocerá el estado de su pedido en todo momento, será capaz de saber si hay mucho trabajo en el restaurante y saber si su pedido tardara más o menos.
+Requisitos operacionales:  determinan cómo hace las cosas el sistema
+Ejemplo: la función de pedidos se conectará a la base de datos mediante una conexión SQL
+Está conectado con cocina mediante la aplicación para saber si un plato esta disponible o no, al igual que con el Ryder para saber si le surge algún imprevisto e informar al cliente.
+Requisitos de recursos:  se refieren a la plataforma en la se explotará el componente, plataformas del sistema ya en operación o recursos externos al sistema.
+Ejemplo: la herramienta utilizará la información de la base de datos sobre las reservas para ofrecer al usuario las horas disponibles.
+Requisitos de prestaciones:  determinan las condiciones relativas a las prestaciones del componente que pueden.
+ medirse. Ejemplo: la confirmación de un pedido se demorará un máximo de 5 minutos, 
+la disponibilidad de un plato o no debe notificarse antes del inicio del servicio. 
+Análisis de subsistemas: facilita el análisis del sistema descomponiendo el sistema en subsistemas. ¿realmente hacen falta? Nosotros solo queremos una aplicación de comida
+Aunque si lo aplicáramos al restaurante seria por ejemplo un componente de la aplicación que envía el pedido a la cocina para que lo acepten
+Análisis de casos de uso Nos sirve no proporciona escenarios que nos indican como debe interactuar el producto con el usuario para lograr un objetivo. Nos dice como actúa el sistema dependiendo de diferentes escenarios de interacción con el usuario.
+Ejemplo: 1. cliente pide un plato, 2. aplicación confirma que ese plato está disponible ,3. Si el plato esta disponible se confirma pedido ,3.1 si el plato no esta disponible la aplicación sugiere otro plato o el plato estrella, 4 la aplicación informa a cocina del pedido,4.1 cocina informa a la aplicación si hay retraso o no, 5 el pedido se pone en marcha.
+Definición de interfaces de usuario:  analizaremos cual será el cliente potencial y pensaremos como quiere el usuario que funcione y se comporte el sistema para facilitar el dialogo entre la aplicación y la persona y evitar frustración que la maquina se entienda con el usuario y que el usuario se entienda con la aplicación, que la aplicación muestre la información que queremos con claridad. En esto se basará el desarrollador para el futuro proyecto.
+Ejemplo: interfaz con todos los platos para seleccionar lo que quiere, interfaz de resumen de compra para pagar, interfaz donde el cliente consultara el estado del pedido.
+Aprobación de análisis del proyecto: será la presentación ante el jefe de proyecto del objetivo principal de la aplicación exponiendo a quien se dirige la aplicación, que queremos conseguir con ella, el tiempo del que disponemos y a quien va dirigido deberemos transmitirlo de forma convincente y con claridad.
+Aprobación: determinamos si el proyecto tiene consentimiento para ser puesto en marcha.
+
+Diseño del sistema de información: aquí deberemos definir la aplicación con suficientes detalles como para permitir su interpretación y realización de forma física por parte del desarrollador.
+diseño de casos de uso reales: aquí definimos el comportamiento de la aplicación para distintos casos de uso es pasar el análisis de casos de uso a la fase de diseño
+diseño de clases: (una clase es una plantilla que nos servirá para crear objetos ya predefinidos que representan unidades o conceptos)
+aquí garantizaremos que las clases proporcionaran el comportamiento que requieren las realizaciones de los casos de uso.
+Que tenemos la suficiente información para implantar la clase con seguridad,
+Describiremos como se agrupan e interaccionan las clases.
+Diseño físico de los datos: aquí especificamos las características de cada uno de los componentes requeridos para poner en práctica el diseño lógico (hardware, software, personal, maneras de proceder etc.)
+Especificación técnica del plan de pruebas: definiremos aquí el plan de pruebas para cada uno de los niveles establecidos en el análisis del sistema de información.
+Definiremos una estrategia de trabajo para llevar a cabo paso a paso las actividades de la prueba.
+Establecimientos de requisitos de implantación:  ni idea preguntare a Olga
+Aprobación del diseño del sistema de información: (conjunto de datos que interactúan entre si con un fin común, conjunto ordenado de mecanismos que tienen como fin la administración de datos y de información, de manera que puedan ser recuperados y procesados fácil y rápidamente, se compone de recursos interconectados de carácter humano, datos, actividades(procedimientos), recursos informáticos (software y hardware)
+Definimos la arquitectura del sistema y del entorno tecnológico que le dará soporte y la 
+especificación de los componentes del sistema de información.
+Aprobación: determinamos si el sistema de información tiene la suficiente consistencia para ser desarrollado
+
+
+
+
+Definición del sistema: consistirá en una aplicación para un restaurante con la que el cliente quiere que esta gestione todo lo relativo a los pedidos que realizara el usuario 
+Informándole de los platos disponibles, precio, tiempo de espera, seguimiento del pedido, operaciones de pago y zona de reseñas con esto se busca agilidad a lo hora de hacer pedidos mejorar la comunicación con el cliente y disminuir tiempos de espera.
+
+scrum lo que permite es un trabajo colaborativo entre los distintos equipos de un proyecto
+basándose a menudo en la gestión de proyectos agile incluye reuniones herramientas y funciones que nos ayudan a estructurar nuestro trabajo.
+Un sprint es un periodo breve de tiempo fijo en el que un equipo de scrum trabaja para completar unos trabajos establecidos así dividimos trabajos muy grandes y porciones menores que facilitan nuestro trabajo, los sprints se planificaran mediante reuniones donde se decide que trabajo haremos en este sprint y como se realiza el trabajo.
+Backlog del producto: una lista de trabajo ordenado por prioridades para el equipo de desarrollo que se obtiene de las prioridades y de los requisitos, puede ir evolucionando a medida que lo haga el producto y el entorno de trabajo
+User stories: es la representación de un requisito expresado en lenguaje coloquial e informa de la función de la aplicación/sistema desde el punto de vista de un usuario, al final proporcionara función software a lo pedido por el cliente (o al cliente)
+
+Que hace un product owner¿? Debe sacar el máximo del valor a entregar conociendo bien todos los aspectos del proyecto
+Debe asegurarse de que hay un buen backlog product, aunque el no lo escriba será la persona que lo defenderá ante terceros lidera la planificación de los Sprint y definir los objetivos
+Debe ser un buen comunicador, participar como un miembro mas en el scrum team
+Debe saber como funciona el desarrollo del software
+Transmite a través de las user stories las necesidades que luego formaran el Product backlog
+Scrum master:
+Planifica la implantación del scrum
+Ayuda entender a la organización que interacciones con la organización dan valor y cuales no
+Se asegura que la meta este bien definida
+Elimina cualquier impedimento al equipo
+Facilita los eventos del scrum
+Deja al equipo actuar mientras lo lidera.

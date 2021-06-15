@@ -1,0 +1,42 @@
+php es un lenguaje de progrmacion no como los anteriores que eran lenguajes de marcas
+en el mismo ordenador no se puede usar xamp y wamp porque puede crear conflicto.
+el puerto de apache es el 80 igual que el del xamp por eso es bueno cambiarlo
+pid= id de proceso
+en disco c saldra la carpeta de wamp t en otra carpeta llamada www
+veremos las futuras webs que subamos.
+la matriz de los navegadores es _post
+$_post["n"] variables
+la manera de comunicarse con el navegador en php son los formularios
+echo es para escribir en el navegador todo lo que escribamos dspues de echo
+se vera en el navegador. todas las instrucciones en php terminan con ;
+si hemos empezado el archivo con comillas dobles(el echo) y escribimos dentro otra instruccion que contenga
+comillas deberemos intercalarlas es decir si empezamos con comillas dobles lo que este dentro
+si pongo simples fuera, pongo simples dentro.
+se se escribira con simples iviceversa.
+si quiero escribir html dentro php pongo echo empiezo comillas" y escribo y finalizo tambien con comillas
+action es para que pongas a donde te vas(el destino)cuando pulsas en el boton del formulario.
+html= estructura
+php= logico,lo hace funcionar,sin php no se puede guardar informacion.
+ejemplo sabiamos hacer fomularios pero no sabiamos hacerlos funcionar.
+esto en cuanto a diseño
+en cuanto a funcionalidad entra en juego POST que recupera datos nombrados de un formulario con post
+_POST= matriz
+n= sergio
+p= 1234
+el input que yo meta va ir guardado en una variable que se llama n(nombre)
+el password que yo meta ira en una variable que se llama p
+en php todas las variables llevan dollar
+$_post["n"] en el sitio donde tenga esto pondra sergio(o cualquier nombre le pusimos type text
+$_post["p"] en el sitio donde tenga esto tendre 1234(o cualquier password lo pusimos tipo password)
+if = estructura de control
+ejemplo ahora en prueba.php cambiamos el action para que el resultado te lo devuelva en la misma
+prueba.php
+lo que queremos evitar con el siguiente comando es que me vuelva a salir la pagina de formulario si yo ya la rellene
+con isset solo nos saldra el resultado.(es decir si no lo he rellenado antes nos saldra para rellenar una vez
+pulsado submit como es la misma pagina nos saldra el resultado)
+para eso necesitamos poner isset(if isset)
+para empezar si no he rellenado el formulario if !isset(no=exclamacion)
+echo "alvaro"."amores" es como poner alvaro amores
+siempre en un id en php '' vacio y si tiene espacio lo quitamos.
+isset comprueba si una variable tiene valores dentro
+post para recoger la informacion que viene del formulario

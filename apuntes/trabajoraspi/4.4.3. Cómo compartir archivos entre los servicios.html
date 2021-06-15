@@ -1,0 +1,122 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- saved from url=(0169)https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Sharing_files_between_services.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>4.4.3. Cómo compartir archivos entre los servicios</title><link rel="stylesheet" href="./4.4.3. Cómo compartir archivos entre los servicios_files/default.css" type="text/css"><link rel="stylesheet" media="print" href="./4.4.3. Cómo compartir archivos entre los servicios_files/print.css" type="text/css"><meta name="generator" content="publican 2.1"><meta name="package" content="Fedora-Managing_Confined_Services-13-es-ES-1.4-1"><link rel="home" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/index.html" title="Administración de Servicios Confinados"><link rel="up" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-The_Apache_HTTP_Server-Configuration_examples.html" title="4.4. Ejemplos de configuración"><link rel="prev" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Sharing_NFS_and_CIFS_file_systems.html" title="4.4.2. Cómo compartir sistemas de archivos NFS y CIFS"><link rel="next" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Changing_port_numbers.html" title="4.4.4. Cómo modificar los números de puertos"></head><body class="notoc"><div id="tocdiv" class="toc"><iframe id="tocframe" class="notoc" src="./4.4.3. Cómo compartir archivos entre los servicios_files/toc.html">This is an iframe, to view it upgrade your browser or enable iframe display.</iframe></div><p id="title"><a class="left" href="http://www.fedoraproject.org/"><img src="./4.4.3. Cómo compartir archivos entre los servicios_files/image_left.png" alt="Product Site"></a><a class="right" href="http://docs.fedoraproject.org/"><img src="./4.4.3. Cómo compartir archivos entre los servicios_files/image_right.png" alt="Documentation Site"></a></p><ul class="docnav"><li class="previous"><a accesskey="p" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Sharing_NFS_and_CIFS_file_systems.html"><strong>Anterior</strong></a></li><li class="next"><a accesskey="n" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Changing_port_numbers.html"><strong>Siguiente</strong></a></li></ul><div class="section" title="4.4.3. Cómo compartir archivos entre los servicios" id="sect-Managing_Confined_Services-Configuration_examples-Sharing_files_between_services"><div class="titlepage"><div><div keep-together.within-column="always"><h3 class="title" id="sect-Managing_Confined_Services-Configuration_examples-Sharing_files_between_services">4.4.3. Cómo compartir archivos entre los servicios</h3></div></div></div><div class="para">
+				El tipo Obligatorio ayuda a evitar que los procesos accedan a archivos destinados a ser utilizados por otros procesos diferentes. Por ejemplo, por defecto, Samba no puede leer archivos etiquetados con el tipo <code class="computeroutput">httpd_sys_content_t</code>, que están destinados a ser utilizados por el servidor HTTP Apache. Los archivos pueden ser compartidos entre el servidor HTTP Apache, FTP, rsync y Samba, si los archivos en cuestión son etiquetados con los tipos <code class="computeroutput">public_content_t</code> o <code class="computeroutput">public_content_rw_t</code>.
+			</div><div class="para">
+				El ejemplo que ofrecemos a continuación genera un directorio y sus archivos, y permite que ese directorio y esos archivos puedan ser compartidos (en modo de sólo lectura) por el servidor HTTP Apache, FTP, rsync y Samba:
+			</div><div class="orderedlist"><ol><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">mkdir /shares</code> como el usuario root para crear un nuevo directorio de nivel superior para compartir archivos entre diferentes servicios.
+					</div></li><li class="listitem"><div class="para">
+						Los archivos y los directorios que no coincidan con un modelo de archivo-configuración de contexto, podrían ser etiquetados con el tipo <code class="computeroutput">default_t</code>. Este tipo es inaccesible a los servicios confinados:
+					</div><pre class="screen">$ ls -dZ /shares
+drwxr-xr-x  root root unconfined_u:object_r:default_t:s0 /shares
+</pre></li><li class="listitem"><div class="para">
+						Como usuario root, cree un archivo <code class="filename">/shares/index.html</code>. Copie y pegue el contenido que ofrecemos a continuación en el archivo <code class="filename">/shares/index.html</code>:
+					</div><pre class="screen">&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;Hello&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></li><li class="listitem"><div class="para">
+						Etiquetar el archivo <code class="filename">/shares/</code> con el tipo <code class="computeroutput">public_content_t</code> permite acceso de solo lectura al servidor HTTP Apache, FTP, rsync y Samba. ejecute el comando siguiente como usuario root para agregar la modificación del etiquetado en la configuración archivo-contexto:
+					</div><pre class="screen">semanage fcontext -a -t public_content_t "/shares(/.*)?"
+</pre></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">restorecon -R -v /shares/</code> como usuario root para aplicar las modificaciones en el etiquetado:
+					</div><pre class="screen"># restorecon -R -v /shares/
+restorecon reset /shares context unconfined_u:object_r:default_t:s0-&gt;system_u:object_r:public_content_t:s0
+restorecon reset /shares/index.html context unconfined_u:object_r:default_t:s0-&gt;system_u:object_r:public_content_t:s0
+</pre></li></ol></div><div class="para">
+				Para compartir <code class="filename">/shares/</code> mediante Samba:
+			</div><div class="orderedlist"><ol><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">rpm -q samba samba-common samba-client</code> para verificar que los paquetes <span class="package">samba</span>, <span class="package">samba-common</span>, y <span class="package">samba-client</span> se encuentren instalados (los números de versiones podrían diferir):
+					</div><pre class="screen">$ rpm -q samba samba-common samba-client
+samba-3.5.2-59.fc13.i386
+samba-common-3.5.2-59.fc13.i386
+samba-client-3.5.2-59.fc13.i386
+</pre><div class="para">
+						Si alguno de estos paquetes no se encuentran instalados, instálelos ejecutando el comando <code class="command">yum install <em class="replaceable"><code>niombre-del- paquete</code></em></code> como usuario root.
+					</div></li><li class="listitem"><div class="para">
+						Edite el archivo <code class="filename">/etc/samba/smb.conf</code> como usuario root. Agregue la siguiente entrada al final de este archivo para compartir el directorio <code class="filename">/shares/</code> a través de Samba:
+					</div><pre class="screen">[shares]
+comment = Documents for Apache HTTP Server, FTP, rsync, and Samba
+path = /shares
+public = yes
+writeable = no
+</pre></li><li class="listitem"><div class="para">
+						Es necesario poseer una cuenta Samba para poder montar un sistema de archivos Samba. Ejecute el comando <code class="command">smbpasswd -a <em class="replaceable"><code>nombre-de-usuario</code></em></code> como usuario root para crear una cuenta Samba, donde <em class="replaceable"><code>nombre-de-usuario</code></em> es un usuario Linux existente del sistema. Por ejemplo, <code class="command">smbpasswd -a testuser</code> genera una cuenta Samba para el usuario Linux testuser:
+					</div><pre class="screen"># smbpasswd -a testuser
+New SMB password: <em class="replaceable"><code>Enter a password</code></em>
+Retype new SMB password: <em class="replaceable"><code>Enter the same password again</code></em>
+Added user testuser.
+</pre><div class="para">
+						Ejecutar el comando <code class="command">smbpasswd -a <em class="replaceable"><code>nombre-de-usuario</code></em></code>, donde <em class="replaceable"><code>nombre-de-usuario</code></em> sea el nombre de usuario de una cuenta Linux que no exista en el sistema, provocará un error <code class="computeroutput">Cannot locate Unix account for '<em class="replaceable"><code>username</code></em>'!</code>.
+					</div></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">service smb start</code> como usuario root para iniciar el servicio Samba:
+					</div><pre class="screen">service smb start
+Starting SMB services:                                     [  OK  ]
+</pre></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">smbclient -U <em class="replaceable"><code>nombre-de-usuario</code></em> -L localhost</code> para conocer la lista de los elementos compartidos disponibles, donde <em class="replaceable"><code>nombre-de-usuario</code></em> es la cuenta Samba agregada en el paso 3. Cuando le sea pedida una contraseña, ingrese la que ha indicado para la cuenta Samba del paso 3 (los números de las versiones podrían diferir):
+					</div><pre class="screen">$ smbclient -U <em class="replaceable"><code>username</code></em> -L localhost
+Enter <em class="replaceable"><code>username</code></em>'s password:
+Domain=[<em class="replaceable"><code>HOSTNAME</code></em>] OS=[Unix] Server=[Samba 3.5.2-59.fc13]
+
+Sharename       Type      Comment
+---------       ----      -------
+shares          Disk      Documents for Apache HTTP Server, FTP, rsync, and Samba
+IPC$            IPC       IPC Service (Samba Server Version 3.5.2-59)
+<em class="replaceable"><code>username</code></em>        Disk      Home Directories
+Domain=[<em class="replaceable"><code>HOSTNAME</code></em>] OS=[Unix] Server=[Samba 3.5.2-59.fc13]
+
+Server               Comment
+---------            -------
+
+Workgroup            Master
+---------            -------
+</pre></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">mkdir /test/</code> como usuario root para crear un nuevo directorio. Este directorio será utilizado para montar los elementos compartidos <code class="computeroutput">shares</code> de Samba.
+					</div></li><li class="listitem"><div class="para">
+						Ejecute el siguiente comando como usuario root para montar los elementos compartidos <code class="computeroutput">shares</code> de Samba sobre <code class="filename">/test/</code>, reemplazando <em class="replaceable"><code>username</code></em> con el nombre de usuario del paso 3:
+					</div><pre class="screen">mount //localhost/shares /test/ -o user=<em class="replaceable"><code>username</code></em></pre><div class="para">
+						Ingrese la contraseña de <em class="replaceable"><code>username</code></em>, que fue configurada en el paso 3.
+					</div></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">cat /test/index.html</code> para observar un archivo que esté siendo compartido a través de Samba:
+					</div><pre class="screen">$ cat /test/index.html
+&lt;html&gt;
+&lt;body&gt;
+&lt;p&gt;Hello&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre></li></ol></div><div class="para">
+				Para compartir <code class="filename">/shares/</code> mediante el servidor HTTP Apache:
+			</div><div class="orderedlist"><ol><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">rpm -q httpd</code> para verificar que el paquete <span class="package">httpd</span> se encuentre instalado (el número de las versiones podría diferir):
+					</div><pre class="screen">$ rpm -q httpd
+httpd-2.2.11-6.i386
+</pre><div class="para">
+						Si este paquete no se encuentra instalado, ejecute el comando <code class="command">yum install httpd</code> como usuario root para instalarlo.
+					</div></li><li class="listitem"><div class="para">
+						Trasládese al directorio <code class="filename">/var/www/html/</code>. Ejecute el siguiente comando como usuario root para crear un enlace (denominado <code class="computeroutput">shares</code>) hacia el directorio <code class="filename">/shares/</code>:
+					</div><pre class="screen">ln -s /shares/ shares
+</pre></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">service httpd start</code> como usuario root para iniciar el Servidor HTTP Apache:
+					</div><pre class="screen">service httpd start
+Starting httpd:                                            [  OK  ]
+</pre></li><li class="listitem"><div class="para">
+						Utilice un navegador web para navegar hasta <code class="computeroutput">http://localhost/shares</code>. Observará el archivo <code class="filename">/shares/index.html</code>.
+					</div></li></ol></div><div class="para">
+				Por defecto, el servidor HTTP Apacghe lee un archivo <code class="filename">index.html</code>, si es que existe. Si <code class="filename">/shares/</code> no posee un archivo <code class="filename">index.html</code>, pero en su lugar tiene archivos <code class="filename">file1</code>, <code class="filename">file2</code>, y <code class="filename">file3</code>, observaría el listado de un directorio cuando acceda a <code class="computeroutput">http://localhost/shares</code>:
+			</div><div class="orderedlist"><ol><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">rm -i /shares/index.html</code> como usuario root para eliminar el archivo <code class="filename">index.html</code>.
+					</div></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">touch /shares/file{1,2,3}</code> como usuario root para crear tres archivos en <code class="filename">/shares/</code>:
+					</div><pre class="screen"># touch /shares/file{1,2,3}
+# ls -Z /shares/
+-rw-r--r--  root root system_u:object_r:public_content_t:s0 file1
+-rw-r--r--  root root unconfined_u:object_r:public_content_t:s0 file2
+-rw-r--r--  root root unconfined_u:object_r:public_content_t:s0 file3
+</pre></li><li class="listitem"><div class="para">
+						Ejecute el comando <code class="command">service httpd status</code> como usuario root para conocer el estado del servidor HTTP Apache. Si el servidor se encuentra detenido, ejecute el comando <code class="command">service httpd start</code>.
+					</div></li><li class="listitem"><div class="para">
+						Utilice un navegador web para navegar hasta <code class="computeroutput">http://localhost/shares</code>. Se presenta el listado de un directorio:
+					</div><div class="mediaobject"><img src="./4.4.3. Cómo compartir archivos entre los servicios_files/shares_listing.png"></div></li></ol></div></div><ul class="docnav"><li class="previous"><a accesskey="p" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Sharing_NFS_and_CIFS_file_systems.html"><strong>Anterior</strong>4.4.2. Cómo compartir sistemas de archivos NFS y ...</a></li><li class="up"><a accesskey="u" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Sharing_files_between_services.html#"><strong>Subir</strong></a></li><li class="home"><a accesskey="h" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/index.html"><strong>Inicio</strong></a></li><li class="next"><a accesskey="n" href="https://docs.fedoraproject.org/es-ES/Fedora/13/html/Managing_Confined_Services/sect-Managing_Confined_Services-Configuration_examples-Changing_port_numbers.html"><strong>Siguiente</strong>4.4.4. Cómo modificar los números de puertos</a></li></ul>
+</body></html>

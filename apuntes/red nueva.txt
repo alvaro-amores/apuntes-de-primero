@@ -1,0 +1,7 @@
+efidicio del 95 cableado antiguo  (ethernet)
+dos plantas y un sotano y un anexo que son todo clases
+los cables llegan a un cuarto central en el anexo
+lo logico seria poner puntos wifi repartidos por el pasillo
+el cableado que hay va a 100 megas y para edicion necesitamos algo que vaya como minimio
+a 10-25 gbs
+planta baja la mas complicada.tiene sala de cine, platos, 

@@ -1,0 +1,271 @@
+objetivo saber configurar y llevar un dominio
+¿Que es un dominio?un trocito de una red sobre el cual tenemos control total,sobre todo lo que este metido en ese dominio(usuarios equipos y grupos sobre todo)que estara controlado por un servidor(el administrador) si no nuestra red tiene un dominio todo lo que este en ese dominio es control nuestro.
+modelo administrativo: dado la manera organizativa de una empresa,traspasar como la empresa esta formada para nosotros poder traspasar ese esquema a la red
+windows server:cuando empresa monta una red con windows server lo que quiere es gestionar/crear dominos porque el objetivo es compartir información, la potencia de windows server es que podemos controlar el dominio
+directorio activo: active directory: implementa un protoclo que se llama LDAP que es el que usa para conectarse a un dominio,esta herramienta permite centralizar el acceso a nuestra red
+dominio =entorno / directorio = herramienta con la que gestiono el entorno.
+un arbol: es un conjunto de dominios agrupados bajo el mismo dns(servidor) bosque grupo de arboles.
+unidad organizativa conjunto de elementos de un dominio
+catalogo global y esquema del directorio activo,partes de la base de datos donde va a ir almacenando todas las cosas que nosotros configuremos(siempre copia de seguridad de la base de datos)
+controlador de domino es un servidor que se hace cargo de todo eso 
+servicio de directorio: funciones importantes: seguridad total de que todo lo que se haga en ese dominio se hace por mi, delegacion: yo como admistrador puedo delegar funciones sobre la persona o persona que yo quiera y podre crear politicas de grupo o directivas(permisos) una instalacion ideal es en la que tiene implentada la politica de la empresa en las politicas de grupo
+objetos :que meteremos en active directory usuarios grupos equipos y unidades organizativas.
+relaciones de confianza: para validar usuarios de distintos dominios entre si.
+kerberos: protocolo de autenticación pero no de autorización,es decir que este protocolo identifica al usuario pero no determina los recursos o servicios a los que puede acceder o no 
+ampliamente usado en active directory en la que nos informa de los privilegios de cada usuario autenticado pero que queda a cargo de los servicios a el verificar  que dichos priviligios son suficientes para acceder a sus recursos
+usa udp y tcpcomo protocolos de trasnporte da la informacion en claro por lo tanto el propio kerberos cifra los mensajes.
+en kerberos intervienen varios agentes encargados de autenticar:
+cliente o usuario que quiere acceder al servicio, aplication server donde se expone el servicio al que el usuario quiere acceder,key distribution center, es el servicio que distribuyen los tickets (validaciones)
+porque fallaba la ip al instalar active directory¿?:no sabe con que direccion salir fuera,le ponemos direccion ip fija. necesito dos servidores uno para salir a internet y otro para mi clientes configuracion ideal seria:
+seria tener dos tarjetas de red una para dar servicios de dominio interno y otra para salir fuera como minimo lo mejor seria tener servidores
+https://www.ediciones-eni.com/open/mediabook.aspx?idR=1b9191a4f11dc799e5a43cbbaf6c3418 arboles y bosques
+dominios y confianzas de active directory-
+sitios y dominios de active directory- 
+en usuarios y equipos de active directory es donde le doy forma a mi dominio (estructura)
+NO ENTRA:
+(repaso: las politicas de grupo son las que determinan como vamos a manejar la uo, politica de grupo )
+nuevo:
+carpeta pide nombre y la ruta de la red: \\esteservidor\prueba (este servidor es el nombre del servidor y carpeta prueba)
+entre dos gpos la ultima prevalece y si hay cosas definidas en las dos prevalecera la de la segunda pero las cosas que esten en la primera y no en la segunda seguira prevaleciendo las de la primera
+exigido: le estamos diciendo a active directory que esta gpo se ejecutara si o si independientemente de lo que haya arriba
+las gpos se agrupan a toda la unidad organizativa
+filtrado de seguridad nos permite hacer una lista de objetos sobre los cuales si podemos aplicar la gpo
+filtrado wmi= lenguaje wql nos sirve para aplicar un gpo al resultado de una consulta en lenguaje wql
+sitios:diferentes delegaciones de las que se componia mi red
+TERCER TRIMESTRE:
+REPASO:
+arquitectura vonn neuman: repaso
+unidad de control: encargada de dar intrrucciones a la alu
+alu: encargada de hacer las operaciones
+memoria: conocida como ram la memoria en la que se almacena el programas
+dis.entrada: desde los que nos comunicamos con el ordenador
+dis salida: desde donde el ordenador se comunica con nosotros
+p2p: cualquier equipo es cliente o servidor cualquier equipo puede compartir una carpeta.
+cliente servidor: servidor da servicio cliente consume el servicio.(centralizadas) cuanto mas cliente servidor sea la red mas control tendremos.
+comoponentes importantes para la red: cpu memoria sistema de entrada y salida y perifericos
+memoria virtual: es la posibilidad de utilizar una parte del disco duro como si fuera memoria ram, cuanto mas ram tenga menos memoria virtual del disco duro cogere,necesitare menos ir al disco como memoria auxiliar.
+si yo quiero que mi red valla rapido, equipo del usuario, tarjeta de red,cable(medio)wifi,servidor(tiene que tener una tarjeta de red buena) si tengo todo esto muy bueno pero uno de los componentes falla se creara cuello de botella.
+arquitectura basica de un so en red:kernel nucleo del sistema operativo 
+una que conecta el kernel con la parte el hardware,
+y otra que lo conecta con el usuario(aplicacion)
+como sabemos si podemos instalar un so o no, depende de la persona que nos lo ha pedido(los requisitos que ella nos dicte)
+ejercicio:
+1.binario posiciamiento de binario direccionamiento de memoria(32,64).puede que influya la memoria virtual que le des
+
+como compartir carpeta
+crear carpeta cualquiera :
+boton derecho propiedades comapartir uso compartido avazando, permisos, agregamos
+en active directory saldra usuarios de dominios y lo selecionamos para compartir
+una carpeta con los usuarios del dominio y en ese momento podemos quitar el TODOS
+que viene por defecto si no quiero compartilo con todos los usuarios del dominio
+lo recomendable es hacer grupos
+otra forma seria con politicas grupos, crear carpeta añadirla al dominio y creando gpos para dar esos priviliegios
+UD FINAL:
+
+POST-IMPLANTACION:
+actuaciones que haremos nosostros como tecnicos despues de una instalacion/implantacion:
+entre medias de implantacion y administracion de sistemas operativos.
+implantacion y administracion son dos fases muy interelacionadas pero hay una zona difusa entre medias
+no se sabe si es admin o implantacion.
+de la implantacion partimos de cero, lo que yo vaya a poner alli no existe antes, primero planificamos,
+que vamos a poner como lo vamos a poner, instalamos, puesta en marcha y configuración
+administracion:
+partiendo de la implantación que hemos realizado asegurarse de que todo vaya correcto.
+gestionar que las contraseñas de usuarios caducan adecuadamente seria administración.
+implantación= todo lo que se hace por primero vez
+Administración= el dia a dia, ocuparse de que todo vaya como tiene que ir
+ejemplo claro de duda  configuración de las gpos¿que es implantación o administración?
+en el mercado hay más trabajo de administrador que de implantación
+pero podemos acabar en una consultora que solo se dedique a implantar, ponemos en marcha y damos curso de como mantenerlo
+a la persona que se vaya a hacer cargo.
+
+si la empresa tiene un cierto tamaño, llama a una empresa externa y luego contrata administradores para que lo mantengan.(en la mayoria)
+
+
+
+RECURSOS COMPARTIDOS:
+
+recurso algo que es utilizable dentro del sistema(cualquier cosa)
+a nivel de red los archivos de impresion son los recursos mas compartidos.
+normalmente conectadas a un servidor de impresion 
+tambien se puede comaprtir la impresora como si fuera un archivo mas.
+netbios es un protocolo que permite adjuntar un nombre a cualquier dispositivo/recurso del sistema
+en linux el servidor de impresion es un servicio mas
+SEGURIDAD Y PERMISOS:
+Hacen referencia a los privilegios que nosostros otogarmos para una tarea o determinar un acceso
+impedimos que alguien no deseado no use nuestro recurso, aunque tambien evitamos errores fortuitos.
+Esta asignación de privilegios se hace SIEMPRE!! todos los servicios disponibles deben haber pasado nuestro
+criterio/filtro de seguridad(salvo los que no sean relevantes, pero aun asi habran pasado por nuestro filtro)
+tambien se haran a nivel de sercio o a nivel de dominio
+windows se comparte con otorgar permisos, el clasico y la segunda gpo son los mas usados es muy flexible y esta muy bien
+estructurada.
+depende de nosotros y de nuestra confiración del sistema que se gestionen las cosas como quiere la empresa, no hay mejor manera de gestionar una empresa
+que mediante un sistema informatico.
+todo lo que gestiona un sistema informatico evita el factor humano y por la tanto e smas justo
+Sí algo de seguridad falla en la empresa sera nuestra culpa, todas las reglas que la emnpresa dijera
+que lo quiere de una manera, tendremos que configurarlo asi, debemos garantizar la seguridad y proteccion
+de los accesos
+debemos testear(auditar) es ver si esta haciendo ver las cosas se hara periodicamente aunque todo vaya bien.
+raras son las auditorias que son limpias.
+recordatorio linux:
+Lectura: 4
+Escritura: 2
+Ejecución: 1
+
+0: Sin permisos
+1: Ejecución
+2: Escritura
+3: escritura y escritura
+4: Lectura
+5: Lectura y ejecución
+6: Lectura y escritura
+7: Lectura, escritura y ejecución
+
+0 = --- = sin acceso
+1 = --x = ejecución
+2 = -w- = escritura
+3 = -wx = escritura y ejecución
+4 = r-- = lectura
+5 = r-x = lectura y ejecución
+6 = rw- = lectura y escritura
+7 = rwx = lectura, escritura y ejecución
+ recuerda ugo(usuarios,grupo,otros)
+
+copia de seguridad: diferencia entre pequeño y grande
+son obligatorias siempre, puede variar la forma de hacerla.
+copia de seguridad discos tolerantes a fallos que usan la redundancia,discos usados de manera redundante
+raid0= mas velocidad pero el dato es solo uno
+raid1=en espejo todo lo que escribo,lo escribo a la vez en el otro
+raid 2,3,4, son muy parecidos lo importante en estos discos es que ante un fallo lo tengo escrito en otro
+2 y 3 = iguales pero el dos por bit y el 3 por bytes,varios discos espejo entrelazados a nivel de bytes.
+4= que el 3 pero por bloques.
+5= paridad distribuidad(es decir que las "copias" estan distribuidas en caso de error, la paridad es un codigo de control de error
+
+
+PARTE ADMINISTRATIVA:
+auditoria: mediante una lista es comprobar que todo va como debe, su objetivo es detectar no conformidades
+dos tipos de auditoria interna: la que hacemos nosotros con nuestro propio criterio
+la hacemos internamente en la empresa alguien de la empresa(tiene valor solo para nosotros 
+auditoria externa = se contrata alguien de fuera y es la que realmente importa.te dan informes de no conformidades y despues de un tiempo determinado(15 dias-1 mes)
+deben estar arregladas.
+es un alamacen de datos necesarios para comprobar que ha pasado en el sistema en un determinado lapso de tiempo
+
+
+asistencia tecnica:
+labor tecnica= arreglar
+labor de atencion= explicarle que ha pasado
+planificar, documentar y aplicar y protocolo de actuacíon bien clara.
+
+
+trabajo: si nuestro perfil se adapta a la oferta
+ver que tipo de profesionales piden las empresas.
+
+documentacion: planificar, documentar y establecer protocolos de actuacion.
+
+
+
+
+
+
+COMPARTIR MAQUINA VIRTUAL: adaptador puente es la forma de conectar la red virtual(maquina virtual)(su adaptador de red) a tu red fisica
+
+IPLANTACION REAL:
+hay muchas formas de acometer una instalacion la que hace el no tiene que ser la unica
+cliente=usuario la persona que te encarga la implementacion
+llamamos cliente a la persona que nos hace la demanda...cliente,usuario,jefe
+ el objetivo de la reunion es aclarar que hay que hacer OBTENER INFORMACION
+ obtener los requisitos tanto de usuario como de hardware
+
+la reunion necesita preparacion con un guion establecido preguntar todo lo necesario
+nosotros implantaremos SO(no hardware):
+equipos disponibles:
+servidor
+pc clientes
+impresoras
+sistemas de copia de seguridad
+
+
+sistema operativo a instalar:
+requisitos que debe tener el SO
+esta deicidido el sistema operativo a implantar¿?
+se prefiere so de pago o libre¿? windows o linux¿?
+saber si se instala dominio o no
+decidir version junto con el cliente
+
+configuracion del dominio:
+necesario instalar dominio¿?-si siempre que sea una red centralizada(gestion centralizada)
+nombre del dominio
+y resto de datos de configuracion del dominio
+pre-requisito configuracion de red ip fija..etc
+configuracion de la estructura organicitavia:
+saldra el arbol de dominios o bosque
+
+
+
+configuracion de las politicas de la empresa: de aqui saldra la configuracion de las gpo
+
+
+
+-reunion con el cliente
+-requisitos
+-estudio de compatibilidad
+
+
+
+
+
+
+
+
+IMPLANTACION HECHA POR CARLOS: una forma muy buena de estudiar esto
+saber distinguir el guion de lo que hacemos
+PRIMERO BUSCAR NUESTRAS TAREAS : nos requieren para implantar el software de la red
+saber si el HW de la red ya esta implantado
+PLANIFICAR BIEN LA REUNION PREPARAR GUION: para ello deberemos saber con que hardware trabajaremos
+saber si tenemos el sistema operativo disponible o lo elijo yo.
+preguntar si va a ver dominio o no¿? buscar la informacion sobre el dominio tipo, servidores..
+estructura organizativa: saber como se va a organizar, saber los accesos
+congifuracion de gpo: sabemos horas de cierre y uso de impresora pero hay que preguntar mas
+preguntar sobre recursos compartidos.
+saber los plazos y saber los presupuestos.
+no sacare en la reunion lo que ya se.
+saliendo
+PLAN DE IMPLANTACION: suponemos que la empresa no has a dado una contestacion a las cuestiones
+que le hemos realizado
+siempre esta en la cabeza pero es mejor es escribirlo, es un documento que refleja todo lo que vamos a hacer con detalle
+
+ESTUDIO DE COMPATIBILIDAD:
+datos de los sistemas operativos 
+
+REQUISITOS DEL CLIENTE: 
+windows server 2012¿? cumple con los requistos que quiere cliente¿?
+ver si el cliente necesita restricciones horarias el sistema lo permite¿?
+deberiamos hacernos cuestiones de este estilo con todos los requisitos para saber si todos son
+compatibles
+si uno no coincide habra dos opciones: preguntar al cliente si quiere cambiar o preguntarle
+si quiere obviarle.
+
+si el estudio de ocmpatibilidad es positivo seguimos para adelante
+
+lo siguiente es probar en una maquina virtual todos los requisitos del cliente hacer la implantacion alli
+
+al acabar la instalacion virtualizada  ya sabemos si hay o no problemas
+
+PLAN DE IMPLANTACION:
+los 18 puntos
+¿hay que comprar algo?
+diseñar bateria de pruebas que estara probada en la maquina virtual
+
+IMPLANTACION:
+si todo esta en orden hacer los 18 pasos diseñados
+aplicamos bateria de pruebas de cada uno de los casos 
+con una buena implantacion en maquina virtual despues la real no da ningun problema
+suele dar problemas de red.
+
+listado con todas las cosas que llevare a la reunion¿dudas?
+
+en que momento se diseña la bateria de pruebas¿?
+
+
+
+

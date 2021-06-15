@@ -1,0 +1,128 @@
+
+
+https://impulsate.between.tech/montar-servidor-y-securizar-servidor-raspberry-pi   pagina genial sobre raspberry.
+raspeberry.org para descargar el software raspberry pi so
+raspberry pi manager(choose storage) para instalar en windows(download for windows)
+dar a la red ethernet(no al wifi) 192.168.10.+ el numero de la raspberry +10(192.168.10.11)
+(lite o full seleccionar full)
+tarjeta sin formatear:
+meter tarjeta y dar a formatear se formatea(no tocar nada) en ejecutar ponemos diskpart  despues en cmd
+select disk 1 (si no hay mas conectados) y poner clean despues ir a administar discos elige particion y crear nuevo volumen de unos 3gb
+(para el sistema) dar todo a siguiente y que ponga que el volumens e creo bien. despues descargar pi manager elegir el tipo de sistema que quieres y elegir en que disco se instalara.
+listo!!
+
+rapsberry:
+rapberry pi imager seleccionamos para que sistema operativo queremos, descargamos y insertamos la sd y en choose os elegimos el sistema operativo y chose sdhc card elgimos sd
+habilitar protocolo ssh: creamos archivo ssh en la sd sin extension(guardar como dentro de la sd) creamos un bloc de notas nombre ssh
+le damos a vista quitamos la extension txt insertamos la sd en la raspberry y conectamos esta a la red y se asignara una ip
+(habra que descaragar aplicacion ip scaner)
+contaseña por defecto de rapsberry es= raspberry
+sudo rasp pi-config-interface options despues vnc habilitamos este servidor
+(nombre de usario por defecto raspberry pi-contraseña raspberry).
+ip estatica:
+route -n para saber nuestro gateway ej:192.168.o.1
+ahora buscamos las ip de los name server con cat  /etc/resolv.conf ej 192.168.0.1
+seditamos esl archivo para usar ip estatico sudo nano  /etc/dhcpcd.conf
+nano para editar archivos sudo para modo administrador
+interface eth0
+static ip_address=192.168.10.11/24
+static routers=192.168.0.1
+static domain_name_servers=192.168.0.1 8.8.8.8(puedes haber aqui otra ip de otro name server)
+
+
+instalar samba:
+sudo cp /etc/samba/smb.conf smb.backup
+
+
+
+#======================= Share Definitions =======================
+
+[homes]
+   comment = Home Directories
+   browseable = no
+
+# By default, the home directories are exported read-only. Change the
+# next parameter to 'no' if you want to be able to write to them.
+   read only = no
+
+# File creation mask is set to 0700 for security reasons. If you want to
+# create files with group=rw permissions, set next parameter to 0775.
+   create mask = 0700
+# public shares, not just authenticated ones
+   usershare allow guests = yes
+
+#======================= Share Definitions =======================
+
+[homes]
+   comment = Home Directories
+   browseable = no
+
+# By default, the home directories are exported read-only. Change the
+# next parameter to 'no' if you want to be able to write to them.
+   read only = no
+# File creation mask is set to 0700 for security reasons. If you want to
+# create files with group=rw permissions, set next parameter to 0775.
+   create mask = 0700
+
+# Directory creation mask is set to 0700 for security reasons. If you want to
+# create dirs. with group=rw permissions, set next parameter to 0775.
+   directory mask = 0700
+# File creation mask is set to 0700 for security reasons. If you want to
+# create files with group=rw permissions, set next parameter to 0775.
+   create mask = 0700
+
+# Directory creation mask is set to 0700 for security reasons. If you want to
+# create dirs. with group=rw permissions, set next parameter to 0775.
+   directory mask = 0700
+
+# By default, \\server\username shares can be connected to by anyone
+# with access to the samba server.
+# The following parameter makes sure that only "username" can connect
+# to \\server\username
+# This might need tweaking when using external authentication schemes
+   valid users = %S
+
+# Un-comment the following and create the netlogon directory for Domain Logons
+# (you need to configure Samba to act as a domain controller too.)
+;[netlogon]
+;   comment = Network Logon Service
+;   path = /home/samba/netlogon
+;   guest ok = yes
+;   read only = yes
+# Un-comment the following and create the profiles directory to store
+# users profiles (see the "logon path" option above)
+# (you need to configure Samba to act as a domain controller too.)
+# The path below should be writable by all users so that their
+# profile directory may be created the first time they log on
+;[profiles]
+;   comment = Users profiles
+;   path = /home/samba/profiles
+;   guest ok = yes
+;   browseable = yes
+;   create mask = 0600
+;   directory mask = 0700
+
+[printers]
+   comment = All Printers
+   browseable = no
+   path = /var/spool/samba
+   printable = yes
+(lo que creo yo)
+[pi 64gb]
+comment = USB Share
+path = /media/64GB             (pueden ser otros caminos ej= /home/pi)
+read only = no
+writeable = yes
+browseable = yes
+valid users @users
+guest ok = yes
+force user = nobody
+ una vez salimos añadimos al usuario pi en samba = sudo smbpasswd -a pi  (despues pedira password
+
+
+
+
+
+
+
+

@@ -1,0 +1,170 @@
+extra docker:
+por ejemplo virtual box es un emulador que emula todos los recursos de ese sistemas(recursos virtuales).
+esx: optimiza(aplicacion de virtualizacion) requiere muchos recursos(hardware,sistema,virtual box)
+concepto de contenedor: al principio ligado a linux y hoy dia tambien aunque funciona en windows gracias a wsl/wsl2(integra el kernel de linux dentro de windows)
+entonces tenemos un trocito de nuestro kernel que es linux lo que agiliza la virtualizacion(realmente tenemos parte linux en nuestro sistema)
+
+l3 switching= un switch con capacidad router a nivel 3 (red)
+primera razon por la que se hace es rendimiento y la segunda seguridad.
+para ver protocolo arp en windows
+arp -a
+si queremos usar el protocolo arp para conectarme con otro red cambiamos de nivel a nivel red y el router se encarga
+de buscarlo usando routing, nosotros solo podemos comunicarnos en nuestra red.
+distinguir entre aplicaciones y sistemas operativos. 
+middleware= software de aplicacion.
+tipos de software: sistema, programacion, aplicacion.
+linux es Gnu gnu= si yo uso algo en linux lo puedo modificar y no se puede vender(pero puedes cobrar por otras cosas)
+java:
+javascript:lo invento netscape, complento del html.
+ntfs : soporta permisos de usuario 
+shareware: te doy un software lo puedes usar un tiempo gratis pero pasado ese tiempo debes pagar.
+cuando hablo de requisitos de instalacion hablo de hardware.
+las tablas de arp se pueden contaminar si ponemos un ip que no es de mi red
+crc=frame check sequence= secuencia de verificacion de las tramas enviadas, En una trama con error de FCS, es probable que la información del encabezado sea correcta, pero la checksum que calcula la estación receptora no concuerda con la que adjunta la estación transmisora al extremo de la trama. Por lo tanto, se descarta la trama.
+
+VLAN
+vlan:seguridad, rendimiento y flexibilidad.los switches que tienen la capacidad de hacer routing son los L3 por que tienen capacidad de actuar al tercer nivel tcp/ip
+dominio de broadcast:llegara a los equipos de una red(vlan) no a toda la red.una vlan es un dominio de broadcast
+dominio de colision: es cuando yo voy hablar con que otro equipo puedo chocar cuando hablo ejemplo mas claro wifi. en los switches no se producen colisiones porque por cada puerto 
+segmento fisico donde puede haber colisiones que son muy tipicas en el protocolo red ethernet
+solo hay un pc. cuando en una red usas muchos pcs usan mucho ancho de banda para hablar entre si(un buen limite  seria 250 por red)
+escalabilidad:puede tener 4000 pcs si lo divido en 8 subredes, pero no 4000 en una(por eficiencia)
+los switches de nivel 2 solo pueden leer tramas y como tienen que reenviar broadcast entre ellos, por eso limitando los dominios de broadcast limitas problemas de muchos switches comunicandose(por subdivisiones)
+una vlan es un dominio de broadcast es independiente de la situacion fisica 
+vlan es nivel 2, red ip es nivel 3
+una de las razones por la que a veces se hacen vlanes es para priorizar el trafico
+puertos access:defino que este puerto es un puerto de acceso y que pertenece a la vlan 10 los puertos que usan la etiqueta access no usan 802.1.q solo lleva una vlan
+puertos trunk:estos si usan el tag de vlan si usa 802.1.q las tramas se etiquetan
+los puertos pueden ser de dos tipos de acceso o troncales
+acceso no hace falta vlan tag, se les quita la etiqueta cuando salen.
+trunk si hace falta todas las tramas van etiquetadas
+hay siempre una vlan pordefecto que es lavlan1
+crea 
+con el dot1q usamos la vlan estandar no la de la cisco.
+
+TRADUCCION DOCUMENTO:
+pag 1 definición: una agrupación lógica de usuarios y recursos de red conectados a puertos definidos administrativamente en un switch
+-dominios de difusión más pequeños
+-organizados por :
+ubicación
+función
+departamento
+aplicación o protocolo
+pag 2:
+-cada segmento tiene su propio dominio de colisión
+-todos los segmentos están en el mismo dominio de broadcast
+pag 3:
+características de las vlans
+-simplificar la gestión de la red
+-proporciona un nivel de seguridad sobre una red plana
+-flexibilidad y escalabilidad
+pag6:
+flexibilidad y escalabilidad
+-Los swtichs de capa 2 sólo leen las tramas
+-puede hacer que un switch reenvíe toda la difusión(no queremos)
+-los vlans crean esencialmente dominios de difusión
+-capacidad de añadir usuarios deseados a una vlan independientemente de su ubicación física
+-se pueden crear vlans adicionales cuando el crecimiento de la red consume más ancho de banda
+pag8:
+membresías de vlan
+vlans estáticas:
+método típico de creación de vlans 
+-más seguro
+-un puerto del switch asignado a una vlan siempre mantiene esa asignación hasta que se cambie
+-vlans dinámicas:
+la asignación de un nodo a una vlan es automática
+-Direcciones Mac, protocolos, direcciones de red, etc.
+servidor de políticas de gestión de vlan (vmps)
+-base de datos de direcciones mac para asignaciones dinámicas
+-Direcciones Mac para mapeo de vlan
+
+pag9:identificando vlans:
+enlaces de acceso
+-un enlace que forma parte de una sola vlan
+enlaces troncales:
+-transporta múltiples vlans
+pag11:
+protocolo vlan trunk:
+objetivo: gestionar todas las vlans configuradas en una red de conmutación y mantener la coherencia(cohesion)
+-permite a un administrador añadir, eliminar y renombrar vlans
+pag12:
+Beneficios
+- Configuración coherente
+- Permite el trunking en redes mixtas
+- Seguimiento preciso
+- Informes dinámicos
+- Plug-and-Play
+- Debe crearse un servidor VTP para gestionar
+VLANs
+pag14:
+Modos de funcionamiento de VTP
+- Servidor
+- Por defecto para todos los switches Catalyst¿?
+- Mínimo un servidor para un dominio VTP
+- Cliente
+- Recibe información + envía/recibe actualizaciones
+- No puede hacer ningún cambio
+- Transparente
+- No participa en un dominio VTP pero reenvía
+anuncios VTP
+- Puede añadir/borrar VLANs
+- Localmente significativo
+pag15:
+Configuración de VLANs
+- Creación de VLANs
+- Asignación de puertos de conmutación a VLANs
+- Configuración de puertos troncales
+- Configuración del enrutamiento entre VLANs
+
+
+- un switch tiene como objetivo transmitir datos entre dos o mas segmentos de red, diferencia l3 l2: un switch de capa2 solo funciona
+con mac y uno de capa 3 puede enrutar y puede ejecutar enrutamiento estatico y dinamico, comunica vlans sin necesidad 
+de routers, recomendado para redes lan muy grandes
+
+
+
+-agrupar: donde hay dos enlances  solo vemos uno osea que logicamente solo vemos un puerto "etherchannel" en cisco
+agregacion de enlances en general.
+
+
+stp evita bucles: ejemplo triangulo bloquea por un momento una parte de la red para el paquete llegue por un camino
+y no por dos normalmente el que menos trafico tiene y dejamos activo el que mas trafico tiene (si lo configuramos nosotros)
+otra cosa es que el switch lo configure por defecto y elija el la ruta que tomara.
+
+
+cisco sigue usando comandos es porque puedes escribir todo en un txt y usar eso en una
+instalacion grande, cisco piensa en las empresas grandes
+linksys marca para pequeñas empresas de cisco
+switch hace conmutacion de paquetes a nivel 2 --mac
+router hace conmutacion de paquetes a nivel 3-- router
+cuando un switch se conecta no tiene ni idea de donde esta(distribucion de equipos) entonces
+le pregunta a toda la red
+tabla de macs para saber a que puerto esta conectado una direccion mac(tabla a nivel de vlanes)
+
+la puesta en marcha del stp suele ser bastante costosa
+evita circulos(dobles caminos) y los transforma en arboles
+spanning tree portfast y ya no pasa por alli el stp
+tftp- en capa dos, protocolo para descargarte cosas,por ejemplo 
+para configurar el switch
+config running config ftp (te copia el archivo de configuracion)
+red virtual de nivel 2 por mac vlanes de nivel 2 
+
+Un dominio de colisión es un sitio de nuestra red donde los paquetes enviados por cada uno de los nodos pueden “colisionar”. El objetivo de una red es que funcione la intercomunicación entre cada uno de sus nodos con el mínimo número de problemas.
+
+Los dominios de difusión son los sitios de la red que se pueden separar de acuerdo a la dirección de red que los identifica. Los dispositivos capaces de crear dominios de difusión, o mejor dicho, de separar dominios de difusión, son los enrutadores (routers) .
+
+examen de la tercera evaluacion:
+pondra recuperacion pondra un ejercicio de submetting para los que no sepan.
+configuracion de routers: tracert ping mas completo
+firewall:
+esto se hace en el router que esta conectado a internet, firewall 
+uno de sus funciones mas tipicas es dar acceso a servidores, dependiendo del usuario.
+lista de control de accesos=acl
+cuando activa los acl todo el trafico es denegado y solo deja pasar lo que permitas
+acl comandos las reglas se usaria la ultima que se pusiera asique es mejor poner la mas restrictivasal final
+
+
+NAT:
+lo que hace es traducir una red privada a una publica ejemplo:
+mi ip publica es 81.151.57.33 dentro de esa una ip privada de uno de mis dispositivos es 192.168.0.26 enviamos un paquete a un servidor 100.3.107.15 a este ultimo solo conoceria la ip
+publica pero gracias a nat traduce el paquete enviado desde la 192.168.026  a 81.151.57.33

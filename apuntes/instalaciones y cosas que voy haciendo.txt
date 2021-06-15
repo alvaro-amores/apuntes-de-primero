@@ -1,0 +1,69 @@
+libre office:
+sudo apt update
+sudo apt upgrade
+sudo apt install libreoffice
+extra: df -h memoria del disco en idioma legible para humanos
+extra:dpkg -l todos los paquetes de tu equipo (sale vinicius)
+extra: hostname -I solo la ip de ese hostname.
+
+[sudo apt install ubuntu-desktop(instalar interfaz ubuntu para ubuntu server, se puede poner tambier lubuntu,gnome)
+no-install-recommends(antes de la interfaz para no isntalar los paquetes de actualizaciones)
+sudo reboot (reiniciar)]
+
+[sudo apt remove ubuntu-desktop(desinstalar la interfaz)
+sudo apt auto remove
+sudo reboot]
+
+sudo rm/var/lib/apt/lists/* -vf (cuando instalo ubuntu y no me deja instalar nada)
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install synaptic (gestor de paquetes,actualiza paquetes)
+sudo apt-get update && sudo apt-get dist-upgrade sudo update -d (para actualizar e instalar la ultima version)
+sudo -s (privilegios de administrador)
+df -h (ver disco)
+ls (listado), ls -l (listado mas completo) ls -d */  solo directorios
+pwd me dice en que directorio estoy
+cd ir directorios puedes usar rutas absolutas home/alvaro/archivos o rutas relativas ejemplo estoy en home/alvaro
+y quiero ir a notas pondria ./notas estoy en home y quiero ir a notas pondria alvaro/notas
+
+rmdir borrar directorio
+zip comprimir  unzip descomprimir 
+rm borrar 
+sudo systemctl list-unit-files  --type service  --all ver todos los paquetes
+sudo apt install synaptic 
+                 gnome-software  (tiendas/descargar aplicaciones)
+alt + f2 (ejecutar de linux)
+dash to panel (para retocar barra de tareas)
+control + alt +f1 te manda a la pantalla de contraseña 
+ld -i dira el inodo del archivo
+sudo nano /etc/ passwd -usuarios informacion relevante
+sudo nano /etc/ shadow -contraseñas
+sudo apt install python-gi -copias de seguridad
+sudo apt install net-tools (para poder usar ifconfig)
+(CUANDO ME META EN UN ARCHIVO Y QUIERA SALIR CONTROL + D O CONTROL + C)
+getent passwd | grep alvaro -vere si existe el usuario alvaro
+finger informacion mas precisa de un usuario.
+[instalar puto google: sudo wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb]
+
+lsb_release -a  saber version que estoy usando.
+
+compartir carpetas linux:
+manera facil...
+poner naitilus en el cmd
+te llevara a las carpetas
+por ejemplo yo me meto en home porque es donde estan todos los usuarios
+y es el grupo comun alli creo la carpeta compartir y listo.
+para borrar un programa(paquete,servicio):
+sudo apt-get --purge remove [apache2]
+
+propietario/dueño
+sudo chown pi /samba tambien asi sudo chown pi: /samba otro ejemplo sudo chown pi /var/www/html
+esto para hacer dueño a un usuario de un directorio en este caso solucionaremos, que no nos deje comaprtir en samba
+
+permisos:
+ sudo chmod -R 777 /var/www/html/srv/samba- para dar todos los permisos al directorio y al directorio samba
+que tiene que estar dentro. por ejemplo. Es para dar permisos y podemos usarlo asi dando persimos directorio por directorio
+
+
+

@@ -1,0 +1,18 @@
+confidencialidad de lo que hemos enviado.
+asegurar que quien envia o recibe el mensaje es quien queremos que sea.
+palbra importante=CLAVE
+
+concepto de clave publica y clave privada: se base en que yo tengo una clave que es publica y otra privada
+rsa: es la encriptacion que usamos hoy dia todas las transacciones que hacemos se sustentan en este algoritmo.
+la idea es deshacer patrones
+las claves publicas y privadas tienen 2048
+dos procesos
+encripto con mi clave privada y despues con la clave publica del recepetor
+asi sabra que yo fui el que envio o recibio el mensaje.
+emisor tiene cp y cpri
+el emisor envia "hola" la envia con la clave publica y el receptor usa su clave privada para recibirlo
+la clave privada y la publica estan relacionadas por la multiplicacion de dos numeros primos 
+muy largos.
+si yo encripto con mi clave privada solo he podido crearlo yo.
+hash: generar un codigo con cifras y letras y si cambio una sola coma el hash cambia totalmente
+

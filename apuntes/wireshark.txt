@@ -1,0 +1,16 @@
+wire-shark:
+recuerda una red ethernet es una linea recta (bus)
+por ejemplo tenemos una red dos ordenadores uno de ellos le envia mensaje a un servidor
+el otro que no interviene tambien lee el mensaje pero lo ignora.estan en el mismo dominio
+de broadcast(misma red.)
+es bueno tener una red solo para servidores(como hacemos en cisco)
+porque podemos poner un firewall y escuchar todos los mensajes de la red.(nos interesa)
+en este caso entre el ordenador y el servidor podriamos poner un mirror(replicara todo por los dos lados)
+wire-shark: por ejemplo tenemos una aplicacion que quiere conectarse a un servidor entre medias
+tenemos el wire sharkr analizando todo el contenido y los protocolos.(controla el trafico)
+cuando la aplicacion habla con la red(tcp/ip) hay un driver que no permite que haya dos procesos trabajando
+a la vez en la red.(modo promiscuo)todas las aplicaciones escuchan el tcp/ip y la aplicacion.(cualquier aplicacion que conozca
+la tarjeta de red puede escuchar todos los puertos, es lo que permite el wireshark que por lo menos
+tengamos una palicacion que escuche en todos los puertos)
+
+

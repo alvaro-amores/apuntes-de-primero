@@ -1,0 +1,174 @@
+ls: nos muestra toda la informacion de los archivos como los permisos usuario y grupo al que pertenece el tamaño del archivo fecha, hora y creacion y nombre del archivo.
+ls-a nos muestra archivos y directorios dentro del directorio actual incluyendo archivos ocultos
+ls-t ordena los archivos por fecha de modificacion
+ls-x ordena archivos por modificacion
+ls-lmuestra toda la informacion del archivo usuario grupo permiso tamaño y hora de creacion
+ls-lh-misma informacion que ls-l pero con el tamaño en kb mb
+ls-S ordena los resultados por tamñao de archivo
+cd: cambio del directorio de trabajo
+ejemplo: cambiar del directorio actual al subdirectorio "trabajos"(usa ruta relativa)= cd trabajos/    (cd./nuevodir)(tambien asi)
+ejemplo:cambiar del directorio actual al subdirectorio "trabajos"( usando ruta absoluta)= cd /home/$user/trabajos
+cd .. cambio del directorio actual al de nivel superior(anterior)
+ejemplo:cambiar del directorio de trabajo actual al subdirectorio trabajos/mates/(direcotrio dentro de directorio)= cd trabajos/mates/
+ejemplo cd ../subtrabajos/= para ir a otro directorio de nivel superior al suyo
+cd - ira al directorio anterior
+cd  cambio al directorio principal del usuario
+para cambiar del directorio actual al uno que contiene espacios en su nombre = cd directorio\  nuevo/ (nuevo directorio, seria el nombre)
+o tambien se puede escribir asi sin necesidad de barras inclinadas  cd  'directorio  nuevo'/
+cambiar del dirctorio actual a uno del que no nos acordamos el nombre  cd n*(puede que solo sea la primera letra del directorio asique no solo seria n)
+para cambiar del directorio actual a uno del que no recordamos la ultima letra o caracter= cd trabajo?
+cd t tecla tab= completara con los registros que haya que empiezan por t y completara la palabra
+pwd:
+para saber donde estoy
+pwd-p para obtener la ruta fisica de donde estamos matematicas/trabajos  nos devolvera trabajos ya que matematicas se encuentra en trabajos
+pwd-l nos dira la ruta logica  ej= matematicas/trabajos=matematicas/trabajos nos devolvera
+mkdir:
+crea directorios mkdir nuevodirectorio si es compuesto entre comillas "nuevo directorio"
+crearemos varios directorios a la vez mkdir dir1 dir2 dir3 se dejan espacios para diferenciarlos si quisieramos poner nombres compuestos usar comillas
+mkdir -v directorio1. nos dira al final si el directorio fue creado correctamente o no
+podemos dar permisos a la vez que creamos ejemplo: mkdir -m  u=rwx,g=x,o=x  nuevo directorio
+podremos crear directorios usando rutas relativas(desde el directorio donde estamos) ejemplo dentro de nuevo directorio esta el dir 2 y dentro de dir 2 crearemos dir2-a ej= mkdir  ./nuevodir/dir2/dir2-a
+y tambien con la ruta absoluta ej= mkdir /home/alvaro/miscosas/nuevodir/dir2/dir2-a
+podemos crear un directorio padre y asu vez un directorio hijo ej= mkdir -p padre/hijo (podemos ver si se crearon con el comando tree)
+touch:
+para crear un archivo ej= touch nombre_archivo.txt(si este archivo ya hubiese sido creado este comando modificara el tiempo de acceso y de modificacion a la hora actual)
+crear varios archivos: touch nombre_archivo1.txt nombre_archivo2.txt
+o de una generando los nombres automaticamente ej= touch nombre_archivo{1..3}.txt
+touch -a nombre_archivo.txt cambiara el tiempo de acceso a la hora actual
+touch-m nombre_archivo.txt cambiara el tiempo de modificacion a la hora actual
+touch -am nombre_archivo.txt hara las dos cosas a la vez
+si queremos cambiar el tiempo de acceso y de modificacion sin crear realmente un archivo nuevo haremos touch -c nombre_archivo.txt
+rm:
+para eliminar archivos o directorios en el sistema
+rm texto.txt
+rm -i te preguntara si quieres realmente borrar  ese archivo necesita una confirmacion: rm -i ejemplo.txt
+para borrar directorio vacio = rm -d directorio1
+para borrar directorio de directorio con contenido= rm -r directorio1
+para borrar directorios y que nos pregunte confirmacion= rm -ri
+para borrar y que nos de detalles del proceso= rm -rv
+borrado forzado= rm -rf
+para borrar un elelmento que se encuentra en un directorio distinto al que nos encontramos usaremos rutas relativas=rm ./d/g/g.txt     o rm -d ./d/g
+cp:
+sirve para copiar ficheros o directorios entre un origen y un destino
+por ejemplo si quemos copiar el archivo.txt que esta en dir1/dir2  a home/alvaro/  seria: cp -a  /dir1/dir2/archivo.txt /home/alvaro/archivo.txt
+para copiar directorios completos : cp -r -a /dir1/dir2/dir3 /home/alvaro y copiara el directorio3 completo y todos sus subdirectorios  en /home/alvaro
+mv:
+se usa para mover o renombrar archivos o directorios
+ej=mv archivo1 archivo 2 cambia el nombre del archivo 1 a archivo 2
+ej=mv archivo1 .txt /carpeta1 mueve el archivo a la carpeta 1(si la carpeta no existe se creara)
+ej=mv archivo1.txt cancion.mp3 foto.jpg /descargas (mover varios objetos)
+ej=mv mv *.jpg  ~/imagenes (movera todos los archivos jpg de ese directorio a la carpeta imagenes
+ej=mv  -i archivo.txt  /descargas (te preguntara si quieres mover,confirmacion reponderemos con y o n)
+ej=mv  -f archivo.txt  /descargas (forzara a hacer la accion sin preguntar)
+ej= mv  -n mv -n archivo.txt cancion.mp3 foto.jpg  /Descargas (moveremos varios archivos a la vez pero no sobreescribiran los que ya estaban en el destino pudiendose llamar igual)
+find:para encontrar un fichero o directorio
+bsucar un fichero del cual sabemos nombre y extension= find  / -name  archivo.txt
+buscar un fichero en una ubicacion en particular:  find  /home/alvaro -name texto.txt
+realizar busqueda ignorando minusculas y mayusculas:  find  /home/alvaro  -iname  TExtO.txt
+para buscar directorios:  find  -type d  -name  trabajos
+buscar ficheros por extension: find  /  -type f  name *.sh
+buscar ficheros por permisos: find  /  -type  f -perm 0775  -print (me enseñara todos los ficheros que tienen permisos  0775)
+ahora buscar ficheros que tengan permisos distintos a 0775=  find  /  -type  f  !  -perm 775
+buscar ficheros que tengan permisos solo de lectura:  find  /  -perm  /u=r 
+buscar ficherros ejecutables:find / -perm /a=x
+buscar ficheros o carpetas vacias:  find / -type f -empty    o en el caso de directorios =find / -type d -empty
+buscar ficheros por usuarios:find / -user David   o por grupo  find / -group david
+buscar ficheros por antiguedad por ejemplo con mas de 30 dias de antiguedad(des su ultima modificacion):find / -type f -mtime +30
+por ejemplo a esta busqueda le podemos añadir ademas que los ficheros sean mas grandes de 1mb: find / -type f -mtime +30 -size +1M
+y si por ejemplo quisieramos borrar lo que nos de la busqueda seria:find / -type f -mtime +30 -size +1M -delete
+ln:
+con este comando creamos enlaces simbolicos a ficheros o directorios (acceso sin copiar fichero o directorio):
+si por ejmplo tenemos el fichero  /var/www/index.hml  y queremos crear un enlance simbolico en  /home/alvaro haremos:ln -s /var/www/index.html /home/asolano/index.html
+igual con los directorios  ln -s /var/www/ /home/asolano/www(directorio www)
+chmod:
+se usa para cambiar los permisos de archivos o directorios:
+permisos: u= usuarios  g= grupos  o= otros, r=leer w= escribir x= ejecutar,
+entonces por ejemplo si yo hago esto: chmod u= rwx,  g= r,  o= r mi archivo.txt(le estoy diciendo que usuarios pueden leer escribir y ejecutar, que los grupos solo pueden leer y que otros solo pueden leer)
+ahora con octales:  4= leer   2= escribir  1= ejecutar  0= sin permiso entonces  por ejemplo:
+al usuario le quiero dar todos los permisos seria 7 =4+2+1  al usuario lectura y escritura  6= 4+2+0 y a los grupos solo lectura 4= 4+0+0
+resultado final seria: chmod 764 mi-archivo.txt
+podemos dar permisos de esta manera:
+chmod u+rx sololinux.txt(leer y ejecutar a usuarios)
+chmod ug+rx sololinux.txt(usuario y grupo leera y ejecutara)   otra manera chmod u+rx,g+rx sololinux.txt
+chmod ugo+rwx sololinux.txt(todos los permisos para todos)
+chmod u+rwx,g+rx,o+r sololinux.txt= usuario todo, grupos lectura y ejecucion otros solo leer
+chmod u+rwx,go+rx sololinux.txt usuarios todo, grupos y otros solo lectura y ejecuccion
+umask:
+sirve para definir los permisos por defecto que tendran los nuevos ficheros
+0= rwx
+1=rw
+2=r-x
+3=r--
+4=-wx
+5=-w-
+6=--x
+7=---(ninguno)
+cat:
+el comando cat sirve para crear fusionar e imprimir archivos en la pantalla de salida
+cat  > filaname.txt(para crear un archivo)
+cat filename.txt= el comando leera el contenido del archivo y lo mostrara
+cat  *.txt= para mostrar el contenido de todos los archivos de texto
+cat  source1.txt  source2.txt  >destination.txt= concatenar multiples archivos en uno solo
+cat  -n  filename.txt= muestra el contenido de un archivo junto con le numero de cada linea al comienzo de cada una
+cat   -s filename.txt= elimina lineas vacias para ahorrar espacio
+tac  filename.txt= para ver el archivo en orden inverso
+ps:
+te muestra los procesos iniciados
+ps =procesos iniciados
+(pid-el id del proceso,tty-el nombre de la consola en la que el usuario inicio sesion, time- cantidad de tiempo de procesamiento de la cpu que el proceso a usado, cmd-el nombre del proceso que inicio el proceso)
+ps  -e= todos los procesos iniciados por todos los usuarios
+ps  -eH= jerarquia, puedes ver que procesos son padres e hijos es decir que procesos se iniciaron con otros
+ps  -eH --forest( lo mismo pero en forma de bosque)
+ps  -e  |grep  firefox= puedes especializar la busqueda y ver los procesos que se iniciaron con la palabra firefox
+ps  -p 235= el numero es el id del proceso si supieramos el id del proceso usamos este comando  para ver los detalles
+ps  -c shutter= si sabes el nombre del comando que empezo el proceso lo ponemos y tedara los detalles del proceso
+ps  -u alvaro= para ver los procesos iniciados por un usuario te listara los procesos iniciados por un usuario
+sudo kill  845= si sabemos el id del proceso podemos eliminarlo asi
+sudo pkill top= si sabemos el nombre del proceso(top en este caso) lo eliminara
+sudo killall top= si un proceso  a iniciado a su vez varios subprocesos con el mismo nombre los eliminara todos
+who:
+ muestra los usuarios que estan autentificados en el sitema 
+who: usuarios y datos
+who  -h= dara encabezado(nombre-linea) a las columnas
+who  -b= nos dice hora y fecha a la que se arranco el sitema
+who  -u= lista usuarios logeados
+who  -q= te da el numero concreto de usuarios logueados
+df:
+nos permite saber el espacio libe y el espacio utilizado por nuestro sistema de nuestras unidades de almacenamiento
+df=informacion en bloques de 1k
+df  -Bm= bloques en megabytes
+df  -Bg= bloques en gigabytes
+df  -Bt= en tera bytes
+df  -h = segun el sitema internacional de medidas (si)
+df  --total= al final de la columna nos agrega el total de todas las columnas
+df  -t   o  df  --print-type= añadira una columna y nos dira de que tipo son(tmpfs,ext4,ext3.....)
+date:
+fecha
+date= la salida incluira dia,mes, año y zona horaria
+date  -d "1990-03-28"  +"%A" = para saber el dia exacto de una fecha
+TZ='Asia/Seoul' date = hora de una zona especifica
+date  -r /etc/hosts  = obtendremos la ultima hora de modificacion de hosts
+date  --set="20210307  23:11" = si quieres configurar tu la fecha del terminal aunque no se recomienda
+%a → Nombre abreviado del día.
+%A → Nombre completo del día.
+%b → Mes abreviado.
+%B → Nombre del mes completo.
+%d → Día del mes.
+%H → Hora. De 00 a 23.
+%I → Hora. De 01 a 12.
+%j → Día numérico del año.
+%m → Número de mes.
+%M → Minutos.
+%S → Segundos.
+%u → Número de día de la semana.
+%Y → Año completo
+date -d "6 weeks"=por ejemplo quisieras saber que día será dentro de 6 semanas
+date -d "6 weeks ago" =O lo contrario en el pasado con "ago", que día fue hace 6 semanas:
+
+
+
+
+
+
+
+

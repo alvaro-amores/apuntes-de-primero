@@ -1,0 +1,206 @@
+para dar dhcp a un grupo: ip dhcp excluded-address (172.46.45.1  172.46.45.15) dejamos esas ips libres para otros apratos
+ip dhcp pool y el nombre del router ej: ip dhcp pool sucursal 1
+despues poner network y su direccion ip y la mascara de red ej: network 172.40.52.1 255.255.255.192
+default-router 172.40.52.1 (el mismo)
+dns-server 172.40.49.10 (ponemos la ip del aparato que nos va a proporcionar dns)
+sho running-config(para que me muestre toda la configuracion)
+
+reloads: reload me dira que ya esta modificado que si lo quiero salvar le decimos que no me queda el router limpio sin ninguna configuracion anterior
+ip helper-address sirve para dar el servicio por ejemplo ponemos la ip del servidor o aparato que va a dar el servicio ej:ip helper-address 172.40.49.10
+ip name-server 172.40.49.10 le estamos diciendo por ejmplo que el servicio que quiere este equipo tiene que pedirlo a esa ip
+para que todos los routers encuentren a todos los routers nos vamos a la configuracion de los routers y ponemos  network 0.0.0.0 mask 0.0.0.0 next hop 10.10.10.1
+esa ultima ip es la de router "central por decirlo de alguna manera"  y desde ese sabe llegar a todos
+dhc pool:
+dentro de config
+ip dhc pool red1(el nombre que quieras)
+network 192.168.1.0 255.255.255.0
+default-router 192.168.1.1(puerta de enlace por la que se dara servicio)
+
+dns-server 192.168.1.100 (nos dara el dns)
+exit exit write mem o salir del modo conf y poner end
+ahora excluimos las ip que no queremos que cojan los clientes
+en este caso las de la puerta de enlace y el dns server
+ip dhcp excluded-address 192.168.1.1
+ip dhcp excluded-address 192.168.100
+VLan: agrupa conjuntos de manera logica no fisica subdividimos en nuestra mente logicamente :
+en switch cli ponemos enable configure terminal 
+(en este hemos puesto dos cables ,no  es troncal)
+vlan 10
+vlan 30
+(asi las creamos)
+ahora vamos a darle accesibilidad a la vlan a las interfaces
+interface   f0/4
+switchport access vlan10
+interface   f0/11
+switchport access vlan10
+interface   f0/5 
+switchport access vlan30
+interface   f0/6
+switchport access vlan30
+(el nombre de las interfaces varia no es siempre ese!!!)
+end(enter)
+copy running-config  startup-config(enter)(ok)
+ahora nos metemos en el router:
+hara pregunta pulsamos no (n)
+enable
+configure terminal 
+interface g=0/0
+ip address 172.17.10.1 255.255.255.0
+no shutdown
+(le damos ip a las interfaces del router)
+interface g0/1
+ip address 172.17.30.1 255.255.255.0
+no shutdown
+end
+copy runinng-config  startup-congif
+(ahora configuramos ordenadores estatico en este ejemplo) 
+vlan10 pc:
+ip 172.17.10.21 255.255.255.0
+gateway 172.17.10.1
+vlan30pc:
+172.17.30.23. 255.255.255.0
+gateway
+172.17.30.1
+ENLACES TRONCALES:
+cli switch:
+enable
+configure terminal
+vlan 10
+vlan 30
+agregamos interfaces:
+(la principal la que conecta el router con los pcs)
+interface f0/1
+switchport mode trunk
+(switchport trunk allowed vlan all) podemos poner esto si queremos para que llegue a todos y ahorrar pasos
+end
+configure terminal
+interface f0/2
+switch port mode access
+switchport access vlan 10
+interface0/3
+switch port mode access
+switcport access vlan 30
+end
+ahora en le router:
+cli
+n
+enter
+enable
+configure terminal
+interface g0/0.10(estamos configurando la parte de la interfaza de la vlan 10)
+encapsulation dot1q  10(para que sepa que es la vlan10)
+ip address 172.17.10.1 255.255.255.0
+interface g0/0.30
+encapsulation dot1q 30(para que sepa que es la vlan30)
+ipaddress  172.17.30.1 255.255.255.0
+interface g0/0
+no shutdown
+end
+ahora damos ips a los pcs:(estaticas para la prueba)
+pc vlan 10
+ip 172.17.10.2 255.255.255.0
+gateway 172.17.10.1
+pc vlan30
+ip 172.17.30.2 255.255.255.0
+gateway 172.17.30.1
+router# show arp- nos enseña la tabla de arp
+router#clear arp-cache-para borrar la tabla y que se cargue de nuevo
+mostrar vlans:show vlan brief
+
+
+write memory para guardar una configuracion cuando acabe en el cli.
+
+switch L3:
+ en los switch creamos las vlan con las que vayamos a trabajar TODAS
+para enlazar el L3(con el puerto de los otros switch,EL DEL OTRO SWITCH, el que conecta el otro switch con el L3)
+interface f0/1
+switchpoer trunk encapsulation dot1q (antes que en las vlans normales)
+switchport mode trunk 
+interface f0/2
+switchpoer trunk encapsulation dot1q
+switchport mode trunk 
+(este seria otro puerto de otro switch)
+
+en este switch a las vlan le debemos asignar una ip que sera el gateway(sustituimos aqui al router)
+ejmplo: interface vlan10
+ip address 192.168.100.65 255.255.255.192
+interface vlan20
+ip address 192.168.100.1 255.255.255.192 
+MODO SERGIO
+ip routing para habilitar el enrute
+sergio solo usa los comandos interface para ip a la vlan y el ip routing
+dhcp en l3: cuando ponemos interface vlan 10.... ip address.... poner despues ip helper address al dispositivo que nos de ips!!
+ACUERDATE SIEMPRE MALDITO CABRON DE PONER EL GATEWAY EN LOS SERVIDORES .!!!!!! BITTTCH
+
+acces-list jose:
+acces-list 100 permit udp any host 192.168.100.0(la direccion del servidor)
+acces-list 100 permit udp any host 192.168.100.0 eq 53(dns)
+acces-list 100 permit tcp any host 192.168.100.0 eq 53(dns)
+acces-list 100 permit icmp any any
+acces-list 100 deny ip any any
+interface vlan 10(la que sea)
+ip access-group 100 out(se aplica a interfaces (es decir vlanes))
+
+el resultado de esto es que todos tiene ip y dns pero no se pueden comunicar entre ellos.
+video bueno sergio:
+en conf term
+access-list 102 deny ip 192.168.120.0 0.0.255 192.168.100.0 0.0.0.255
+le estamos diciendo que debe denegar protocolo ip a la 20.0 el acceso al servidor 100.0
+access-list 101 permit ip 192.168.130.0 0.0.255 192.168.100.0 0.0.0.255
+para activarla deberemos hacerlo en la interfaz que queramos(normalmente a la interfaz de servidor y en estos casos a la vlan)
+ip access-group 101 in( todo lo que entre a esa vlan le aplico esto)
+acces-list 103 permit tcp host 192.168.1.10 host 192.168.2.20 eq www
+(tambien se puede poner el nombre en vez del puerto)
+acces-list 103 icmp 192.168.120.0 0.0.0.255 192.168.100.0 0.0.0.255
+acces-list 103 deny ip 192.168.120.0 0.0.0.255 192.168.100.0 0.0.0.255
+access-list 101 permit udp host 10.100.0.1  host 10.100.6.0  eq 67(esta es)
+ip access-group out( todo lo que salga de esa vlan le aplico esto)
+por ejemplo:
+interface vlan 10
+ip access-group 102 out (todo lo que salga de la vlan esta permitido)
+enable> show access-list
+para poner una regla antes que todas las demas
+ip acces-list extended 101( con extended nos metemos en la acces-list en si por ejemplo si 
+queremos borrar una de las listas que creamos) ejemplo nos metemos y ponemos no permit any any
+se borrara(la que sale con el 5) si pongo show access-lists ya no saldra esto va por numero
+por eso el en el video puso 5, ahora si tuvieramos dos que fueran la 10 y 20 ponemos un numero
+anterior a estos dos para que se aplique antes.(aunque tengo dudas porque se supone  que
+esos numeros pertenecen a vlanes y la 5 no existia)
+5 permit icmp any any
+(permitir ping a todos)
+
+se suele poner la mas restrictiva al final
+borrar: no acces-list 101(numero)
+puertos:
+HTTP: puerto 80;-tcp
+HTTPS: puerto 443;
+FTP: puerto 21;-tcp/udp
+FTPS/SSH: puerto 22; 21 para control-tcp
+POP3: puerto 110.tcp
+POP3 SSL: puerto 995.
+IMAP: puerto 143.
+IMAP SSL: puerto 993.
+SMTP: puerto 25 (alternativas: puerto 26 / puerto 2525) tcp
+SMTP SSL: puerto 587
+MySQL: puerto 3306 tcp/udp
+CPanel: puerto 2082
+CPanel SSL: puerto 2083
+WHM (Webhost Manager): puerto 2086
+WHM (Webhost Manager) SSL: puerto 2087
+Webmail: puerto 2095
+Webmail SSL: puerto 2096
+WebDAV/WebDisk: puerto 2077
+WebDAV/WebDisk SSL: puerto 2078
+dhcp 67-servidor y 68 como cliente udp
+www-tcp
+smtp-tcp
+echo tcp 7
+Switch(config)#access-list 101 permit udp any host 10.100.6.0  eq 67
+Switch(config)#access-list 101 permit udp any host 10.100.6.0  eq 53
+Switch(config)#access-list 101 permit tcp any host 10.100.6.0  eq 7
+Switch(config)#access-list 101 deny icmp any host 10.100.6.0  
+valioso examen
+Switch(config)#interface vlan 10
+Switch(config-if)#ip access-group 101 out
+Switch(config-if)#interface vlan 20
+Switch(config-if)#ip access-group 101 out

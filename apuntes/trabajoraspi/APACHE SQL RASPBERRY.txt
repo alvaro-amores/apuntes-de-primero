@@ -1,0 +1,81 @@
+APACHE-PHP-SQL RASPBERRY:
+$ sudo apt update && sudo apt upgrade -y (primero clasico)
+
+$ sudo apt install apache2 -y (instalamos apache)
+$ cd /var/www/html(c:\www\  equivalente linux) (cambiamos al directorio var,para cambiar configuraciones en general incluye informacion variable en general cuando
+se trabaja con servidores o servicios web por ejemplo,listas de impresion...etc)
+/var/www/html $ ls -al (index.html deberia estar este archivo)
+hostname -I (para saber ip rapido)
+ahora si pones tu ip en google te saldra la pagina por defecto de apache
+
+AHORA PHP y sql(dentro de var/www/html)
+/var/www/html $ sudo apt install php -y
+/var/www/html $ sudo rm index.html(opcional)
+pi@raspberrypi:/var/www/html $ sudo nano index.php (eliminamos el index y modificamos
+index.php)(si quieres hacer pruebas  escribe <?php echo "hello world"; ?>)
+/var/www/html $ sudo service apache2 restart
+despues del restart si vuelves a poner tu ip en google aparece el hello world
+/var/www/html $ sudo rm index.php(ya puedes borrar este archivo)
+/var/www/html $ sudo apt install mariadb-server php-mysql -y
+pi@raspberrypi:/var/www/html $ sudo service apache2 restart
+(instalamos sql y damos restart apache de nuevo)
+/var/www/html $ sudo mysql_secure_installation
+(para instalacion segura y te pide ingresar nuevo password)
+(te saldra un pantalla de configuracion)
+Se le pedirá Entrar  la contraseña actual para root  (escriba una contraseña segura): presione Enter
+Escriba  Y  y presione  Entrar  para establecer la contraseña de root
+Escriba una contraseña en el indicador Nueva contraseña: y presione Entrar. Importante: recuerde esta contraseña de root, ya que la necesitará más adelante
+Escribir  Y  para eliminar usuarios anónimos
+Escribir  Y  para no permitir el inicio de sesión de root de forma remota
+Escribir  Y  para eliminar la base de datos de prueba y acceder a ella
+Escriba  Y  para recargar tablas de privilegios ahora
+(se supone que ya podrias entrar en php con root pero seguramente dara error) ponemos este comando 
+sudo mysql --user=root --password
+y dentro esto:
+> create user admin@localhost identified by 'el password que quieras sin comillas despues de by';
+> grant all privileges on *.* to admin@localhost;
+> FLUSH PRIVILEGES;
+> exit;
+definitiva y si es con las putas comillas:
+GRANT ALL PRIVILEGES ON *.* TO 'username'@'localhost' IDENTIFIED BY 'password';(no hace falta lo de localhost)
+PHPmyadmin:
+/var/www/html $ sudo apt install phpmyadmin -y
+(te saldra pantalla de confi y seguir estos pasos)
+Seleccione  Apache2  cuando se le solicite y presione la  tecla Enter 
+¿Configurando  phpmyadmin ? OK
+¿Configurar la base de datos para phpmyadmin con  dbconfig-common ? sí
+Escriba su  contraseña  y presione  OK
+sudo phpenmod mysqli
+pi@raspberrypi:/var/www/html $ sudo service apache2 restart
+seguramente de error nos metemos en la carpeta y ponemos:
+/var/www/html $ sudo ln -s /usr/share/phpmyadmin /var/www/html/phpmyadmin
+Ahora, si enumera los archivos, debería devolver la  carpeta phpmyadmin  :
+pi@raspberrypi:/var/www/html $ ls
+phpmyadmin
+(192.168.1.1/phpmyadmin/ en google y nos saldra pantalla de login
+
+el nombre de usuario sera admin o root y la contraseña la que pusimos antes
+podemos poder permisos a www y a html:
+pi@raspberrypi:~ $ ls -lh /var/www/
+pi@raspberrypi:~ $ sudo chown -R pi:www-data /var/www/html/
+pi@raspberrypi:~ $ sudo chmod -R 770 /var/www/html/
+pi@raspberrypi:~ $ ls -lh /var/www/
+
+
+LISTO!!!
+extra: dbconfig-common  configuracion (base de datos)
+sudo mysql -u root -p -h localhost(para usar el cli en sql)
+ sudo chmod -R 777 /var/www/html/srv/samba- para dar todos los permisos al directorio y al directorio samba
+que tiene que estar dentro.
+para subir una pagina de samba al servidor muy facil:
+creamos dentro etc/
+
+
+
+
+
+
+
+
+
+

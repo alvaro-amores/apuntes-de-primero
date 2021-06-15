@@ -1,0 +1,48 @@
+un exceso de innovacion hace que podamos poner en riesgo la empresa
+lo mejor es tener un equilibrio entre gestion por competencia y gestion por objetivos
+tener exceso de producto siempre es malo.
+interconexion digital de objetos cotidianos que vuelcan informacion en bbdd
+problema, objetivo, ideas(brain stoming), despues las clasificamos entre buenas y malas,elegimos las ideas, anteproyecto, seleccion de innocación selecionamos la idea,ejecutamos el proyecto
+teniendo en cuenta la repercursion de la ejecución del proyecto, explotacion de resultado.
+teamwork aplicacion de gestion de empresas.
+erp gestionar todos los departamentos desde un mismo sistema informatico,gestionar la empresa desde un mismo istema informatico,las empresas suelen tener uno propio.
+estan divididos en modulos(gestion,rrhh,....) un gran fallo si el sistema se cuelga nos deja vendidos.
+bussiness intelligence: captar la informacion captada en el big data para aplicarlo en la empresa
+crm esta dentro del erp es la gestion de la relacion con las clientes esta integrada en el erp.
+lo mejor es operar analizar y colaborar las 3 integradas
+nube:la nube son servidores, las nubes son granjas de servidores,que son los que nos proben de lamavcenamiento,nos dan servicios,
+y nos podemos conectar a ellos con acceso a internet.
+pregunta 1. tener muy claro quienes son o van a ser nuestros clientes
+TEMA8:
+bauer fue el primero en definir el software y la ingenieria de software.
+ieee(informacion,investigaciones)
+en la piramida debajo de compromiso de calidad faltaria producto( que es el software)
+el software evoluciona(actualizaciones) sin el software no podriamos ni administrar ni gestionar ni distribuir la informacion.
+normalmente cuando creamos software nos dirijimos a un publico determinado 
+equipo de calidad suelen ser desarroladores muy buenos, suele haber pique entre equipo de desarrollo y equipo de calidad
+a veces hay gente de marketing con conocimientos de informatica que se centran en el entorno cliente atendiendole(dentro del proceso su tarea es pequeña)
+si un proyecto se alarga mucho suele fallar.
+rerquisitos-desarrollo-nueva version-nuevos requsistos-desarrollo nueva version
+manifiesto agile 
+individuo e interaciones deben estar por encima de los procesos y las herramientas(interaccion sencilla y entendible por el usuario)
+trabajar en software sobre una documentacion sencilla:resultado= no hay documentacion
+colaborar con el clietne sobre la negociacion del contrato(negociar su contrato) porque con la colaboracion con el cliente desarrollar el software es mas facil
+la respuesta al cambio sobre el seguimiento del plan:adaptarnos a cambios 
+-se va aquedar obsoleto-necesitamos que no quede en desuso
+man in the middle: para evitar se codifica
+trazabilidad: documentar lo mejor posible, el analista en base a toda la informacion hara la base de datos
+estimacion de estabilidad= una estimacionde como va a rendir
+jefe de proyecto hace la tarea mas dura a la hora de hacer diagrama de gantt,el trabajo se dividira en tareas desarrolladores testers
+tareas: login usuarios, interfaz,ejecucion de compra la ultima actividad
+subobjetivos: diseño estetico,seguridad 
+gestionar timepo personal tareas y cliente laborales de jefe de proyecto
+fases proyectos:
+analisis
+diseño
+implementacion-decodificar
+testing
+implantacion
+
+
+
+

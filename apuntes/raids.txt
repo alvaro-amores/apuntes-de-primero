@@ -1,0 +1,78 @@
+instalaciones antes de empezar: apt install openssh-server,openshh-client 
+apt install mdadm
+lsblk para verificar los discos disponibles
+para verificar que los discos que le hemos añadido a la maquina virtual estan disponibles:
+ls -l  /dev/sd*
+crear raid 1: mdadm --create  /dev/md/discoraid_1  -l 1 -n 2  /dev/sdb  /dev/sdc
+para comprobar si esta bien hecho el disco podemos usar este comando: mdadm  --detail  /dev/md/discoraid_1
+para ver el estado de tu disco: cat  /proc/mdstat
+ahora le damos un formato de fichero en este caso ext3 :
+mkfs -t ext3  /dev/md/discoraid_1
+creamos un directorio para montar:
+mkdir /mnt/espejo 
+y montamos:
+mount   /dev/md/discoraid_1  /mnt/espejo
+df -h para saber si lo montamos bien
+ls  -l  /dev/md : si no nos acordamos del nombre de nuestra raid
+añadir un disco a una raid:
+mdadm  --add /dev/md127  /dev/sdb  
+
+volumenes logicos:  
+primero creamos el disco fisico (puede ser md o por ejemplo raids)
+pvcreate  /dev/md125   
+despues añadimos este volumen fisico al crear un grupo de volumen :
+vgcreate   prueba_vg  /dev/md125  
+despues añadimos el tamaño que queramos de nuestro grupo de volumen cuando creamos nuestro volumen logico:
+lvcreate  -l 1g  prueba_vg  -n home_lv
+o otra manera: lvcreate --size  2GB --name home_lv  usuarios_vg
+formateamos:  mkfs.ext3  /dev/ prueba_vg/home_lv
+ahora crearemos un directorio para montarlo:
+mkdir  /home
+montamos:mount  /dev/prueva_vg/home_lv  /home
+df -h para comprobar
+activar auto-montado:
+nano  /etc/fstab y dentro ponemos lo que tiene que montarse ejemplo:/dev/prueba_vg/home_lv  /home ext3 defaults 0  0(device,elgrupo de volumen,el volumen logico,la carpeta donde montaremos tipo defults 0 0
+despues para activarlo pondremos mount -a(montara los que tengan automontado)
+extender volumenes logicos:
+lvextend  -L+1GB  /dev/prueba_vg/home_lv (aqui daremos mas tamaño al volumen)
+pero aun nos queda ampliar tambien el sistema de ficheros:
+resize2fs  /dev/prueba_vg/home_lv.
+
+
+dar un porcentaje en creacion lv:
+lvcreate  -l   50%VG   --name home_lv  vg_home (estamos creando un volumen logico con el 50% por ciento del tamaño de vg_home)
+
+lvcreate  -l   50% FREE VG  --name home_lv vg_home (le damos el 50 por ciento de el espacio que quede)
+
+disco spare:
+primero borramos el disco que va sutituir si hiciera falta: primero diremos que el disco falla:
+mdadm  /dev/md127  --fail  /dev/sdb  y despues lo borramos   mdadm --remove /dev/sdb 
+(saldra este mensaje:  faulty in... y despues  hot removed....(para hacer esto en configuracion de maquina virtual tendremos que activar el cambio de discos en caliente)
+(si quisieramos volver a añadirlo poner: mdadm  /dev/md127  --add  /dev/sdb  esto no tiene que ver con lo del spare es solo un apunte)
+añadiendo spare:  mdadm --add  /dev/md127  /dev/sdf |(otra manera) nos dira added  /mdadm /dev/md127 --add /dev/sdf
+si ponemos mdadm   --detail  /dev/md127  no saldra los detalles y aparecera el disco spare 
+
+como borrar un volumen logico:
+primero desmontas la carpeta donde esta ej:  umount /prueba/
+y despues lvremove /dev/antes_vg/antes_lv
+te preguntara si quieres dar a y
+borrarvg= vgremove /dev/prueba_vg 
+mdadborrarpv=pvremove /dev/md127
+lsblk= veo los discos y a que md estan asignados
+
+borrar raid: 
+mdadm --stop /dev/md127 (con este directamente te dice que ya no existe)
+mdadm --stop /dev/md127
+
+more:
+si no vemos una pantalla completa hacer esto por ejemplo:
+vgdisplay  |  more
+vgdisplay  | less  (mas completo)
+
+dmseg:
+ver todo el log del sistema (todos las acciones/ todo lo que esta pasando en el sistema)
+
+hostnamectl  set-hostname  nombre(para poner un nombre)
+control +d cuando me meta en un sitio y no sepa salir
+
+

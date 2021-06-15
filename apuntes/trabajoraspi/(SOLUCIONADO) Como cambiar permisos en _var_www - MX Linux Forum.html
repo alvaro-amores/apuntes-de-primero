@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<!-- saved from url=(0047)https://forum.mxlinux.org/viewtopic.php?t=51771 -->
+<html dir="ltr" lang="en-gb" style="height: 100%;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>(SOLUCIONADO) Como cambiar permisos en /var/www - MX Linux Forum</title>
+
+	<link rel="alternate" type="application/atom+xml" title="Feed - MX Linux Forum" href="https://forum.mxlinux.org/app.php/feed?sid=f5cdf7a72eed89d73910d5a540351c5a">					<link rel="alternate" type="application/atom+xml" title="Feed - Forum - Forum en Español" href="https://forum.mxlinux.org/app.php/feed/forum/12?sid=f5cdf7a72eed89d73910d5a540351c5a">	<link rel="alternate" type="application/atom+xml" title="Feed - Topic - (SOLUCIONADO) Como cambiar permisos en /var/www" href="https://forum.mxlinux.org/app.php/feed/topic/51771?sid=f5cdf7a72eed89d73910d5a540351c5a">	
+	<link rel="canonical" href="https://forum.mxlinux.org/viewtopic.php?t=51771">
+
+<!--
+	phpBB style name: Allan Style - SUBSILVER
+	Based on style:   prosilver (this is the default phpBB3 style)
+	Based on style:   subsilver2 (this is the default phpBB3 style)
+	Original author:  Tom Beddard ( http://www.subBlue.com/ )
+	Modified by old:   Merlin, Allan
+	Modified by :   SKRS
+	Modified by :   Turaiel
+-->
+
+<link href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/font-awesome.min.css" rel="stylesheet">
+<link href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/stylesheet.css" rel="stylesheet">
+<link href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/stylesheet(1).css" rel="stylesheet">
+
+
+
+
+<!--[if lte IE 9]>
+	<link href="./styles/AllanStyle-SUBSILVER/theme/tweaks.css?assets_version=62" rel="stylesheet">
+<![endif]-->
+
+<style type="text/css">
+    .mention {
+        color: #ff0000;
+    }
+</style>
+	
+<link href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/translate.css" rel="stylesheet" media="screen">
+<link href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/mention.css" rel="stylesheet" media="screen">
+<link href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/boardannouncements.css" rel="stylesheet" media="screen">
+
+
+
+<link type="text/css" rel="stylesheet" charset="UTF-8" href="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/translateelement.css"><script type="text/javascript" charset="UTF-8" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/main_es.js.descarga"></script><script type="text/javascript" charset="UTF-8" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/element_main.js.descarga"></script></head>
+<body id="phpbb" class="notouch section-viewtopic ltr hasjs" style="position: relative; min-height: 100%; top: 0px;">
+
+<div id="header-subsilver">
+	<a id="top" class="top-anchor" accesskey="t"></a>
+		<div class="headerbar" role="banner">
+					<div class="inner">
+
+			<div id="site-description" class="site-description">
+				<a id="logo" class="logo" href="https://forum.mxlinux.org/index.php?sid=f5cdf7a72eed89d73910d5a540351c5a" title="Board index">
+					<span class="site_logo"></span>
+				</a>
+				<h1>MX Linux Forum</h1>
+				<p>Support for MX and antiX Linux distros</p>
+				<p class="skiplink"><a href="https://forum.mxlinux.org/viewtopic.php?t=51771#start_here">Skip to content</a></p>
+			</div>
+
+									<div id="search-box" class="search-box search-header" role="search">
+				<form action="https://forum.mxlinux.org/search.php?sid=f5cdf7a72eed89d73910d5a540351c5a" method="get" id="search">
+				<fieldset>
+					<input name="keywords" id="keywords" type="search" maxlength="128" title="Search for keywords" class="inputbox search tiny" size="20" value="" placeholder="Search…">
+					<button class="button button-search" type="submit" title="Search">
+						<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+					</button>
+					<a href="https://forum.mxlinux.org/search.php?sid=f5cdf7a72eed89d73910d5a540351c5a" class="button button-search-end" title="Advanced search">
+						<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+					</a>
+					<input type="hidden" name="sid" value="f5cdf7a72eed89d73910d5a540351c5a">
+
+				</fieldset>
+				</form>
+			</div>
+						
+			</div>
+					</div>
+</div>
+
+
+<div id="wrap" class="wrap">
+	<div id="page-header">
+				<div class="navbar-top" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-main" class="nav-main linklist" role="menubar">
+
+		<li id="quick-links" class="quick-links dropdown-container responsive-menu" data-skip-responsive="true">
+			<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#" class="dropdown-trigger dropdown-toggle">
+				<i class="icon fa-bars fa-fw" aria-hidden="true"></i><span>Quick links</span>
+			</a>
+			<div class="dropdown">
+				<div class="pointer"><div class="pointer-inner"></div></div>
+				<ul class="dropdown-contents" role="menu">
+					
+											<li class="separator"></li>
+																									<li>
+								<a href="https://forum.mxlinux.org/search.php?search_id=unanswered&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-gray" aria-hidden="true"></i><span>Unanswered topics</span>
+								</a>
+							</li>
+							<li>
+								<a href="https://forum.mxlinux.org/search.php?search_id=active_topics&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" role="menuitem">
+									<i class="icon fa-file-o fa-fw icon-blue" aria-hidden="true"></i><span>Active topics</span>
+								</a>
+							</li>
+							<li class="separator"></li>
+							<li>
+								<a href="https://forum.mxlinux.org/search.php?sid=f5cdf7a72eed89d73910d5a540351c5a" role="menuitem">
+									<i class="icon fa-search fa-fw" aria-hidden="true"></i><span>Search</span>
+								</a>
+							</li>
+					
+										<li class="separator"></li>
+
+									</ul>
+			</div>
+		</li>
+
+				<li data-skip-responsive="true">
+			<a href="https://forum.mxlinux.org/app.php/help/faq?sid=f5cdf7a72eed89d73910d5a540351c5a" rel="help" title="Frequently Asked Questions" role="menuitem">
+				<i class="icon fa-question-circle fa-fw" aria-hidden="true"></i><span>FAQ</span>
+			</a>
+		</li>
+			<li class="" data-last-responsive="true">
+		<a href="https://forum.mxlinux.org/app.php/contactadmin?sid=f5cdf7a72eed89d73910d5a540351c5a" role="menuitem">
+			<i class="icon fa-envelope fa-fw" aria-hidden="true"></i><span>Contact us</span>
+		</a>
+	</li>
+				
+			<li class="rightside" data-skip-responsive="true">
+			<a href="https://forum.mxlinux.org/ucp.php?mode=login&amp;redirect=viewtopic.php%3Ft%3D51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Login" accesskey="x" role="menuitem">
+				<i class="icon fa-power-off fa-fw" aria-hidden="true"></i><span>Login</span>
+			</a>
+		</li>
+					<li class="rightside" data-skip-responsive="true">
+				<a href="https://forum.mxlinux.org/ucp.php?mode=register&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" role="menuitem">
+					<i class="icon fa-pencil-square-o  fa-fw" aria-hidden="true"></i><span>Register</span>
+				</a>
+			</li>
+						</ul>
+
+	</div>
+</div>
+
+<div class="navbar" role="navigation">
+	<div class="inner">
+
+         <ul class="linklist rightside navlinks">
+   <li><a href="https://www.mxlinux.org/">MX HOME</a> •  </li>
+   <li><a href="https://www.mxlinux.org/donate">DONATE </a> •  </li>
+   <li><a href="https://www.mxlinux.org/wiki">WIKI </a> •  </li>
+   <li><a href="https://www.mxlinux.org/manuals">MANUALS </a> •  </li>
+   <li><a href="https://www.mxlinux.org/support">SUPPORT</a> •  </li>
+   <li><a href="https://bugs.mxlinux.org/">BUGS</a> •  </li>
+   <li><a href="https://github.com/MX-Linux">GIT</a> </li>
+  
+   
+         </ul>
+	<ul id="nav-breadcrumbs" class="nav-breadcrumbs linklist navlinks" role="menubar">
+						
+		<li class="breadcrumbs" itemscope="" itemtype="http://schema.org/BreadcrumbList" style="max-width: 520px;">
+			
+							<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope=""><a href="https://forum.mxlinux.org/index.php?sid=f5cdf7a72eed89d73910d5a540351c5a" itemtype="https://schema.org/Thing" itemscope="" itemprop="item" accesskey="h" data-navbar-reference="index" title="Board index"><i class="icon fa-home fa-fw"></i><span itemprop="name">Board index</span></a><meta itemprop="position" content="1"></span>
+
+											
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="79"><a href="https://forum.mxlinux.org/viewforum.php?f=79&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" itemtype="https://schema.org/Thing" itemscope="" itemprop="item" title="Community"><span itemprop="name">Community</span></a><meta itemprop="position" content="2"></span>
+															
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="81"><a href="https://forum.mxlinux.org/viewforum.php?f=81&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" itemtype="https://schema.org/Thing" itemscope="" itemprop="item" title="Other Languages"><span itemprop="name">Other Languages</span></a><meta itemprop="position" content="3"></span>
+															
+								<span class="crumb" itemtype="https://schema.org/ListItem" itemprop="itemListElement" itemscope="" data-forum-id="12"><a href="https://forum.mxlinux.org/viewforum.php?f=12&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" itemtype="https://schema.org/Thing" itemscope="" itemprop="item" title="Forum en Español"><span itemprop="name">Forum en Español</span></a><meta itemprop="position" content="4"></span>
+							
+					</li>
+		<li id="translate" class="rightside" style="height:23px">
+	<div id="google_translate_element"><div class="skiptranslate goog-te-gadget" dir="ltr" style=""><div id=":0.targetLanguage" class="goog-te-gadget-simple" style="white-space: nowrap;"><img src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/cleardot.gif" class="goog-te-gadget-icon" alt="" style="background-image: url(&quot;https://translate.googleapis.com/translate_static/img/te_ctrl3.gif&quot;); background-position: -65px 0px;"><span style="vertical-align: middle;"><a aria-haspopup="true" class="goog-te-menu-value" href="javascript:void(0)"><span>Seleccionar idioma</span><img src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/cleardot.gif" alt="" width="1" height="1"><span style="border-left: 1px solid rgb(187, 187, 187);">​</span><img src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/cleardot.gif" alt="" width="1" height="1"><span aria-hidden="true" style="color: rgb(118, 118, 118);">▼</span></a></span></div></div></div>
+</li>
+					<li class="rightside responsive-search">
+				<a href="https://forum.mxlinux.org/search.php?sid=f5cdf7a72eed89d73910d5a540351c5a" title="View the advanced search options" role="menuitem">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</a>
+			</li>
+			</ul>
+
+	</div>
+</div>
+	</div>
+
+	
+	<a id="start_here" class="anchor"></a>
+	<div id="page-body" class="page-body" role="main">
+		
+				<div id="phpbb_announcement" style="background-color:#c3d3de">
+		<a href="https://forum.mxlinux.org/app.php/boardannouncements/close?hash=4ff337c5&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" data-ajax="close_announcement" data-overlay="false" class="close clearfix" title="Close announcement"></a>		<div><div style="text-align:center"><span style="color:#325375"><span style="font-size: 110%; line-height: normal"><strong class="text-strong">Welcome!</strong></span></span></div>
+
+<span style="text-decoration:underline"><strong class="text-strong">Forum users</strong></span><br>
+
+<ul><li> Please read <a href="https://forum.mxlinux.org/viewtopic.php?p=255062#p255062" class="postlink"><strong class="text-strong">this</strong></a> before asking for help, and don't forget to add Quick System Info to help requests!</li>
+<li>Please follow the <a href="https://forum.mxlinux.org/viewtopic.php?p=255061#p255061" class="postlink"><strong class="text-strong">Forum Rules</strong></a></li></ul>
+<hr style="height:10px;border:0;box-shadow:0 10px 10px -10px #8c8b8b inset">
+<span style="text-decoration:underline"><strong class="text-strong">Current releases</strong></span><br>
+--<strong class="text-strong">MX-19.4 </strong> release info <a href="https://mxlinux.org/blog/mx-19-4-now-available/" class="postlink"><strong class="text-strong">here</strong></a><br>
+--<strong class="text-strong">Migration</strong> information to MX-19.4 <a href="https://mxlinux.org/migration/" class="postlink"><strong class="text-strong">here</strong></a><br>
+--<strong class="text-strong">antiX-19.3 (Manolis Glezos)</strong> release info <a href="https://antixlinux.com/antix-19-3-manol%20..." class="postlink"><strong class="text-strong">here</strong></a><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong"> Important information</strong></span><br>
+--<a href="https://mxlinux.org/blog/meltdown-spectre-news/" class="postlink"> Spectre and Meltdown vulnerabilities</a><br>
+<br>
+<span style="text-decoration:underline"><strong class="text-strong">News</strong></span><br>
+-- MX Linux on social media: <a href="https://mxlinux.org/wiki/other/mx-linux-social-media" class="postlink"><strong class="text-strong">here</strong></a><br>
+-- New Forum Features, Marking Solved and Referencing a User: <a href="https://forum.mxlinux.org/viewtopic.php?p=620528#p620528" class="postlink"><strong class="text-strong">here</strong></a></div>
+	</div>
+
+<h2 class="topic-title"><a href="https://forum.mxlinux.org/viewtopic.php?f=12&amp;t=51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a">(SOLUCIONADO) Como cambiar permisos en /var/www</a></h2>
+<!-- NOTE: remove the style="display: none" when you want to have the forum description on the topic body -->
+<div style="display: none !important;">Este forum es para los usuarios de MX hispanoparlantes<br></div>
+
+
+<div class="action-bar bar-top">
+	
+			<a href="https://forum.mxlinux.org/posting.php?mode=reply&amp;f=12&amp;t=51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+	
+			<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="https://forum.mxlinux.org/viewtopic.php?f=12&amp;t=51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+	
+			<div class="search-box" role="search">
+			<form method="get" id="topic-search" action="https://forum.mxlinux.org/search.php?sid=f5cdf7a72eed89d73910d5a540351c5a">
+			<fieldset>
+				<input class="inputbox search tiny" type="search" name="keywords" id="search_keywords" size="20" placeholder="Search this topic…">
+				<button class="button button-search" type="submit" title="Search">
+					<i class="icon fa-search fa-fw" aria-hidden="true"></i><span class="sr-only">Search</span>
+				</button>
+				<a href="https://forum.mxlinux.org/search.php?sid=f5cdf7a72eed89d73910d5a540351c5a" class="button button-search-end" title="Advanced search">
+					<i class="icon fa-cog fa-fw" aria-hidden="true"></i><span class="sr-only">Advanced search</span>
+				</a>
+				<input type="hidden" name="t" value="51771">
+<input type="hidden" name="sf" value="msgonly">
+<input type="hidden" name="sid" value="f5cdf7a72eed89d73910d5a540351c5a">
+
+			</fieldset>
+			</form>
+		</div>
+	
+			<div class="pagination">
+			4 posts
+							• Page <strong>1</strong> of <strong>1</strong>
+					</div>
+		</div>
+
+
+
+
+<div id="subsilver-nav-topic">
+	<div class="inner"><div class="post has-profile">
+		<div class="leftsided postbody subsilver-topic-title">Message</div>
+		<div class="leftsided postprofile subsilver-topic-author">Author</div>
+	</div></div>
+</div>
+
+			<div id="p517701" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile517701">
+			<dt class="no-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="avatar"><img class="avatar" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/g30.png" width="80" height="74" alt="User avatar"></a>														</div>
+								<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #00BFBF;" class="username-coloured">emarin</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forum.mxlinux.org/search.php?author_id=22558&amp;sr=posts&amp;sid=f5cdf7a72eed89d73910d5a540351c5a">3</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jul 22, 2019 1:34 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content517701">
+
+						<h3 class="first"><a href="https://forum.mxlinux.org/viewtopic.php?p=517701&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517701">(SOLUCIONADO) Como cambiar permisos en /var/www</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forum.mxlinux.org/posting.php?mode=quote&amp;f=12&amp;p=517701&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><span class="posti"><a href="https://forum.mxlinux.org/viewtopic.php?p=517701&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517701" onclick="prompt(&#39;Message #1&#39;,this.href); return false;">#1</a></span>
+									<a class="unread" href="https://forum.mxlinux.org/viewtopic.php?p=517701&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517701" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #00BFBF;" class="username-coloured">emarin</a></strong> » </span><time datetime="2019-07-27T16:58:05+00:00">Sat Jul 27, 2019 12:58 pm</time>
+			</p>
+			
+			
+			
+			<div class="content">Saludos amigos soy usuario nuevo en esta excelente distro y hasta el momento cumple las expectativas por mucho la quiero usar para desarrollar y ya instale todo lo que necesito solo que se me presenta una situacion en cuanto al directorio /var/www del servidor apache2 que instale de los repositorios.<br>
+<br>
+Cuando copie todos mis proyectos y ejemplos no los podia ejecutar me di cuenta que era un problema de servicios por lo que me veo obligado a ir individualmente por carpeta dando permisos de lectura y escritura. Me preguntaba si no habria una manera de hacerlo mas rapido y ademas que me fije que con los archivos nuevos es igual.<br>
+<br>
+Agradeceria su ayuda al respecto. <img class="smilies" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/hug.gif" width="22" height="15" alt=":hug:" title="hug"></div>
+
+			
+			
+													<div class="notice">
+					Last edited by <a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #00BFBF;" class="username-coloured">emarin</a> on Sun Jul 28, 2019 1:47 pm, edited 1 time in total.
+									</div>
+			
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+				<div id="p517703" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile517703">
+			<dt class="no-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="avatar"><img class="avatar" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/g30.png" width="80" height="74" alt="User avatar"></a>														</div>
+								<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #00BFBF;" class="username-coloured">emarin</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forum.mxlinux.org/search.php?author_id=22558&amp;sr=posts&amp;sid=f5cdf7a72eed89d73910d5a540351c5a">3</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Mon Jul 22, 2019 1:34 pm</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content517703">
+
+						<h3><a href="https://forum.mxlinux.org/viewtopic.php?p=517703&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517703">Re: Como cambiar permisos en /var/www</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forum.mxlinux.org/posting.php?mode=quote&amp;f=12&amp;p=517703&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><span class="posti"><a href="https://forum.mxlinux.org/viewtopic.php?p=517703&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517703" onclick="prompt(&#39;Message #2&#39;,this.href); return false;">#2</a></span>
+									<a class="unread" href="https://forum.mxlinux.org/viewtopic.php?p=517703&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517703" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=22558&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #00BFBF;" class="username-coloured">emarin</a></strong> » </span><time datetime="2019-07-27T17:16:24+00:00">Sat Jul 27, 2019 1:16 pm</time>
+			</p>
+			
+			
+			
+			<div class="content">Saludos, ya lo solucione los comandos por consola como Root son los siguientes:<br>
+<br>
+chmod 777 "nombre de la carpeta"<br>
+chmod 777 -R "nombre de la carpeta"<br>
+chmod +x -R "nombre de la carpeta"<br>
+<br>
+Ya el servidor local funciona perfecto igual como lo tengo en otro pc con windows.<br>
+<br>
+Saludos.</div>
+
+			
+			
+									
+									
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+				<div id="p517725" class="post has-profile bg2">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile517725">
+			<dt class="no-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=18436&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="avatar"><img class="avatar" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/18436.png" width="120" height="120" alt="User avatar"></a>														</div>
+								<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=18436&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #000033;" class="username-coloured">Gerson</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forum.mxlinux.org/search.php?author_id=18436&amp;sr=posts&amp;sid=f5cdf7a72eed89d73910d5a540351c5a">822</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Sun Nov 12, 2017 10:58 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content517725">
+
+						<h3><a href="https://forum.mxlinux.org/viewtopic.php?p=517725&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517725">Re: Como cambiar permisos en /var/www</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forum.mxlinux.org/posting.php?mode=quote&amp;f=12&amp;p=517725&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><span class="posti"><a href="https://forum.mxlinux.org/viewtopic.php?p=517725&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517725" onclick="prompt(&#39;Message #3&#39;,this.href); return false;">#3</a></span>
+									<a class="unread" href="https://forum.mxlinux.org/viewtopic.php?p=517725&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517725" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=18436&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #000033;" class="username-coloured">Gerson</a></strong> » </span><time datetime="2019-07-27T20:11:44+00:00">Sat Jul 27, 2019 4:11 pm</time>
+			</p>
+			
+			
+			
+			<div class="content">Si ya lo solucionaste, por favor edita el título del tema a (Solucionado)</div>
+
+			
+			
+									
+									<div id="sig517725" class="signature">No todos ignoramos las mismas cosas.  <img class="smilies" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/confused.gif" width="16" height="21" alt=":confused:" title="Confused"></div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+				<div id="p517804" class="post has-profile bg1">
+		<div class="inner">
+
+		<dl class="postprofile" id="profile517804">
+			<dt class="no-profile-rank has-avatar">
+				<div class="avatar-container">
+																<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=7923&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="avatar"><img class="avatar" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/7923.gif" width="50" height="50" alt="User avatar"></a>														</div>
+								<a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=7923&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #000033;" class="username-coloured">Richard</a>							</dt>
+
+									
+		<dd class="profile-posts"><strong>Posts:</strong> <a href="https://forum.mxlinux.org/search.php?author_id=7923&amp;sr=posts&amp;sid=f5cdf7a72eed89d73910d5a540351c5a">2861</a></dd>		<dd class="profile-joined"><strong>Joined:</strong> Fri Dec 12, 2008 10:31 am</dd>		
+		
+						
+						
+		</dl>
+
+		<div class="postbody">
+						<div id="post_content517804">
+
+						<h3><a href="https://forum.mxlinux.org/viewtopic.php?p=517804&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517804">Re: Como cambiar permisos en /var/www</a></h3>
+
+													<ul class="post-buttons">
+																																									<li>
+							<a href="https://forum.mxlinux.org/posting.php?mode=quote&amp;f=12&amp;p=517804&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Reply with quote" class="button button-icon-only">
+								<i class="icon fa-quote-left fa-fw" aria-hidden="true"></i><span class="sr-only">Quote</span>
+							</a>
+						</li>
+														<li class="responsive-menu hidden dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li></ul>
+							
+						<p class="author"><span class="posti"><a href="https://forum.mxlinux.org/viewtopic.php?p=517804&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517804" onclick="prompt(&#39;Message #4&#39;,this.href); return false;">#4</a></span>
+									<a class="unread" href="https://forum.mxlinux.org/viewtopic.php?p=517804&amp;sid=f5cdf7a72eed89d73910d5a540351c5a#p517804" title="Post">
+						<i class="icon fa-file fa-fw icon-lightgray icon-md" aria-hidden="true"></i><span class="sr-only">Post</span>
+					</a>
+								<span class="responsive-hide">by <strong><a href="https://forum.mxlinux.org/memberlist.php?mode=viewprofile&amp;u=7923&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" style="color: #000033;" class="username-coloured">Richard</a></strong> » </span><time datetime="2019-07-28T13:50:17+00:00">Sun Jul 28, 2019 9:50 am</time>
+			</p>
+			
+			
+			
+			<div class="content">Aunque 777 funciona y puede copiar los archivos, creo que será más seguro según este ejemplo:<br>
+<br>
+<a href="https://ubuntusp.info/questions/228115/permisos-predeterminados-para-var-www" class="postlink">https://ubuntusp.info/questions/228115/ ... ra-var-www</a><br>
+<br>
+¿Cuáles son los PERMISOS PREDETERMINADOS para /var/www ?<br>
+<br>
+permissions chmod apache2 php<br>
+pregunta user175023 06.12.2013 - 08:38<br>
+3 respuestas<br>
+24<br>
+<br>
+Los permisos en esta carpeta son:<br>
+chmod 755 /var/www/<br>
+<br>
+y los archivos dentro de la carpeta son:<br>
+chmod 644 /var/www/file<br>
+<br>
+respondido por el chaos 06.12.2013 - 08:43<br>
+42<br>
+El permiso predeterminado para /var/www en sí mismo es bastante estándar: owner root:root y mod 755 .<br>
+<br>
+En cuanto a cualquier cosa dentro /var/www , ese es uno de los raros directorios en los que tiene el privilegio de decidir qué incluir y qué permisos debería tener todo lo que contiene. Pero lo que tiene más sentido es:<br>
+<br>
+    La mayoría de los archivos deben poder escribirse según el usuario o grupo que más les escriba. Puede establecer que sean propiedad de su cuenta de usuario. O configura un grupo personalizado para tus desarrolladores. O si los archivos se modifican raramente y desea una buena seguridad, puede ir con root:root y simplemente sudo en las raras ocasiones en que serán modificados.<br>
+<br>
+    La mayoría de los archivos no deben poder escribirse en todo el mundo. Por lo tanto, 644 para archivos y 755 para directorios son apropiados (o 664 y 775 si desea otorgar acceso de escritura a un grupo).<br>
+<br>
+    no se recomienda configurar cualquiera de ellos para que pueda ser escrito por el servidor web, es decir, www-data , excepto por cualquier archivo específico en el que sus scripts web puedan escribir. Si es así, es mejor establecer el usuario o el grupo de esos archivos en www-data que hacer que se puedan escribir en todo el mundo. Tenga en cuenta que cada vez que el usuario www-data puede escribir en cualquier archivo dentro de la raíz web, ya sea configurando al usuario o al grupo en esos archivos, o convirtiéndolos en editables en todo el mundo, es un posible problema de seguridad. El que se pueda escribir en el mundo es el peor de los dos.<br>
+<br>
+respondido por el thomasrutter 09.07.2014 - 03:57<br>
+9<br>
+<br>
+Asegúrese de que el grupo sea www-data en '/ var / www'.<br>
+sudo chgrp www-data /var/www<br>
+<br>
+Hazlo escribible<br>
+sudo chmod 775 /var/www<br>
+<br>
+establecer identificación de grupo para subcarpetas<br>
+<br>
+sudo chmod g+s /var/www<br>
+<br>
+agrega tu nombre de usuario al grupo<br>
+<br>
+sudo useradd -G www-data [USERNAME]<br>
+OR<br>
+usermod -a -G www-data [USERNAME]<br>
+<br>
+hazte dueño<br>
+sudo chown [USERNAME] /var/www/<br>
+<br>
+    <br>
+respondido por el kamil 06.12.2013 - 09:06<br>
+<br>
+Lea otras preguntas en las etiquetas permissions chmod apache2 php<br>
+Diferencia entre velocidad y velocidad de reloj configurada ¿Cuál es la diferencia entre apt-get update y upgrade?<br>
+<br>
+contribuciones de los usuarios con licencia bajo cc by-sa 3.0 con atribución requerida.<br>
+UbuntuSp</div>
+
+			
+			
+									
+									<div id="sig517804" class="signature">MX-19.4;  4.19.0-12-amd64; Xfce-4.14.4; Dell Latitude E7450; 8 GB RAM<br>
+Intel Core i5-5300U; Intel Graphics, Audio, Video;     Storage: 536 GiB<br>
+.....<br>
+antiX-19.3:  4.9.235-antix.1-486-smp; IceWM-19.2; ASUS 900; 2 GB RAM<br>
+Celeron M; Intel Grph,Aud,Vid;  150 GB</div>
+						</div>
+
+		</div>
+
+				<div class="back2top">
+						<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#top" class="top" title="Top">
+				<i class="icon fa-chevron-circle-up fa-fw icon-gray" aria-hidden="true"></i>
+				<span class="sr-only">Top</span>
+			</a>
+					</div>
+		
+		</div>
+	</div>
+
+	<hr class="divider">
+	
+
+	<div class="action-bar bar-bottom">
+	
+			<a href="https://forum.mxlinux.org/posting.php?mode=reply&amp;f=12&amp;t=51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="button" title="Post a reply">
+							<span>Post Reply</span> <i class="icon fa-reply fa-fw" aria-hidden="true"></i>
+					</a>
+		
+		<div class="dropdown-container dropdown-button-control topic-tools">
+		<span title="Topic tools" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+			<i class="icon fa-wrench fa-fw" aria-hidden="true"></i>
+			<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+		</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																												<li>
+					<a href="https://forum.mxlinux.org/viewtopic.php?f=12&amp;t=51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a&amp;view=print" title="Print view" accesskey="p">
+						<i class="icon fa-print fa-fw" aria-hidden="true"></i><span>Print view</span>
+					</a>
+				</li>
+											</ul>
+		</div>
+	</div>
+
+			<form method="post" action="https://forum.mxlinux.org/viewtopic.php?f=12&amp;t=51771&amp;sid=f5cdf7a72eed89d73910d5a540351c5a">
+		<div class="dropdown-container dropdown-container-left dropdown-button-control sort-tools">
+	<span title="Display and sorting options" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+		<i class="icon fa-sort-amount-asc fa-fw" aria-hidden="true"></i>
+		<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+	</span>
+	<div class="dropdown hidden">
+		<div class="pointer"><div class="pointer-inner"></div></div>
+		<div class="dropdown-contents">
+			<fieldset class="display-options">
+							<label>Display: <select name="st" id="st"><option value="0" selected="selected">All posts</option><option value="1">1 day</option><option value="7">7 days</option><option value="14">2 weeks</option><option value="30">1 month</option><option value="90">3 months</option><option value="180">6 months</option><option value="365">1 year</option></select></label>
+								<label>Sort by: <select name="sk" id="sk"><option value="a">Author</option><option value="t" selected="selected">Post time</option><option value="s">Subject</option></select></label>
+				<label>Direction: <select name="sd" id="sd"><option value="a" selected="selected">Ascending</option><option value="d">Descending</option></select></label>
+								<hr class="dashed">
+				<input type="submit" class="button2" name="sort" value="Go">
+						</fieldset>
+		</div>
+	</div>
+</div>
+		</form>
+	
+	
+	
+			<div class="pagination">
+			4 posts
+							• Page <strong>1</strong> of <strong>1</strong>
+					</div>
+	</div>
+
+
+<div class="action-bar actions-jump">
+		<p class="jumpbox-return">
+		<a href="https://forum.mxlinux.org/viewforum.php?f=12&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="left-box arrow-left" accesskey="r">
+			<i class="icon fa-angle-left fa-fw icon-black" aria-hidden="true"></i><span>Return to “Forum en Español”</span>
+		</a>
+	</p>
+	
+		<div class="jumpbox dropdown-container dropdown-container-right dropdown-up dropdown-left dropdown-button-control" id="jumpbox">
+			<span title="Jump to" class="button button-secondary dropdown-trigger dropdown-select dropdown-toggle">
+				<span>Jump to</span>
+				<span class="caret"><i class="icon fa-sort-down fa-fw" aria-hidden="true"></i></span>
+			</span>
+		<div class="dropdown">
+			<div class="pointer"><div class="pointer-inner"></div></div>
+			<ul class="dropdown-contents">
+																				<li><a href="https://forum.mxlinux.org/viewforum.php?f=130&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> News/Announcements</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=131&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX News and Announcements</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=132&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; antiX News and Announcements</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=133&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Site Announcements</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=103&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> MX - ACTIVELY DEVELOPED AND SUPPORTED</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=104&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX Help</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=97&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Bugs and Non-Package Requests Forum</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=92&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Installation</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=146&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Security</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=23&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Tips&amp;Tricks</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=94&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; General</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=93&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; XFCE Desktop Environment</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=101&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Documentation and videos</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=95&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Themes and Screenshots</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=116&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; MX Art</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=128&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; User contributed icons</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=129&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; User contributed Wallpaper</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=126&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; MX Linux Official Blog</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=107&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Hardware /Configuration</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=108&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Software / Configuration</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=91&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Older Versions</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=143&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX Fluxbox Official Release</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=145&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX KDE Official Release</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=124&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> MX MODIFIED - CONDITIONALLY SUPPORTED BY FORUM MEMBERS</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=100&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX Modified</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=127&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX  Respins</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=112&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> antiX - MX COLLABORATOR, ACTIVELY DEVELOPED AND SUPPORTED</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=40&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; antiX</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=76&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> Development</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=77&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; General</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=65&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Website</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=60&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Torrent Team</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=48&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Art Discussion</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=96&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Translations</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=78&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; MX Repositories</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=115&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; General</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=57&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; MX Repository Discussion</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=55&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Package Requests / Status</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=140&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Package Requests/Status - MX-19</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=134&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Package Requests/Status - MX 17/18</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=121&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Package Requests/Status - MX-15/16</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=79&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> Community</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=80&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Chat</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=6&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; General</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=9&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Community Fun</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=42&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Success Stories</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=25&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Testimonials</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=81&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Other Languages</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=12&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Forum en Español</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=13&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Forum Français</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=14&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Forum Italiano</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=136&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Deutsches Forum</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=139&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; المنتدي العربي</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=144&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; 中文論壇</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=141&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Other Languages Forum</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=82&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Community Submissions</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=39&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Package Sharing</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=27&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Scripts</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=102&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-cat-link"> <span> Administration</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=33&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Rules and Forum How-Tos</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=32&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Rules</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=35&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span><span class="spacer"></span> <span>↳ &nbsp; Forum How-to's</span></a></li>
+																<li><a href="https://forum.mxlinux.org/viewforum.php?f=10&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" class="jumpbox-sub-link"><span class="spacer"></span> <span>↳ &nbsp; Site Help</span></a></li>
+											</ul>
+		</div>
+	</div>
+
+	</div>
+
+
+		<!-- Cleantalk -->
+<script type="text/javascript">
+			var ct_cookie_name = "ct_checkjs",
+				ct_cookie_value = "699017617";
+</script>
+<!--/Cleantalk -->	</div>
+
+
+<div id="page-footer" class="page-footer" role="contentinfo">
+	<div class="navbar" role="navigation">
+	<div class="inner">
+
+	<ul id="nav-footer" class="nav-footer linklist" role="menubar">
+		<li class="breadcrumbs">
+									<span class="crumb"><a href="https://forum.mxlinux.org/index.php?sid=f5cdf7a72eed89d73910d5a540351c5a" data-navbar-reference="index" title="Board index"><i class="icon fa-home fa-fw" aria-hidden="true"></i><span>Board index</span></a></span>					</li>
+		
+				<li class="responsive-menu hidden rightside dropdown-container"><a href="javascript:void(0);" class="js-responsive-menu-link responsive-menu-link dropdown-toggle"><i class="icon fa-bars fa-fw" aria-hidden="true"></i></a><div class="dropdown"><div class="pointer"><div class="pointer-inner"></div></div><ul class="dropdown-contents"></ul></div></li><li class="rightside">All times are <span title="UTC-4">UTC-04:00</span></li>
+							<li class="rightside">
+				<a href="https://forum.mxlinux.org/ucp.php?mode=delete_cookies&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" data-ajax="true" data-refresh="true" role="menuitem">
+					<i class="icon fa-trash fa-fw" aria-hidden="true"></i><span>Delete cookies</span>
+				</a>
+			</li>
+												<li class="rightside" data-last-responsive="true">
+		<a href="https://forum.mxlinux.org/app.php/contactadmin?sid=f5cdf7a72eed89d73910d5a540351c5a" role="menuitem">
+			<i class="icon fa-envelope fa-fw" aria-hidden="true"></i><span>Contact us</span>
+		</a>
+	</li>
+			</ul>
+
+	</div>
+</div>
+
+	<div class="copyright">
+				Style developed by <a href="https://zumaclub.ru/">Zuma Portal</a>, Turaiel,
+		<p class="footer-row">
+			<span class="footer-copyright">Powered by <a href="https://www.phpbb.com/">phpBB</a>® Forum Software © phpBB Limited</span>
+		</p>
+						<p class="footer-row" role="menu">
+			<a class="footer-link" href="https://forum.mxlinux.org/ucp.php?mode=privacy&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Privacy" role="menuitem">
+				<span class="footer-link-text">Privacy</span>
+			</a>
+			|
+			<a class="footer-link" href="https://forum.mxlinux.org/ucp.php?mode=terms&amp;sid=f5cdf7a72eed89d73910d5a540351c5a" title="Terms" role="menuitem">
+				<span class="footer-link-text">Terms</span>
+			</a>
+		</p>
+					</div>
+
+	<div id="darkenwrapper" class="darkenwrapper" data-ajax-error-title="AJAX error" data-ajax-error-text="Something went wrong when processing your request." data-ajax-error-text-abort="User aborted request." data-ajax-error-text-timeout="Your request timed out; please try again." data-ajax-error-text-parsererror="Something went wrong with the request and the server returned an invalid reply.">
+		<div id="darken" class="darken">&nbsp;</div>
+	</div>
+
+	<div id="phpbb_alert" class="phpbb_alert" data-l-err="Error" data-l-timeout-processing-req="Request timed out.">
+		<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<h3 class="alert_title">&nbsp;</h3><p class="alert_text"></p>
+	</div>
+	<div id="phpbb_confirm" class="phpbb_alert">
+		<a href="https://forum.mxlinux.org/viewtopic.php?t=51771#" class="alert_close">
+			<i class="icon fa-times-circle fa-fw" aria-hidden="true"></i>
+		</a>
+		<div class="alert_text"></div>
+	</div>
+</div>
+
+</div>
+
+<div>
+	<a id="bottom" class="anchor" accesskey="z"></a>
+	</div>
+
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/jquery-3.5.1.min.js.descarga"></script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/core.js.descarga"></script>
+
+
+<script type="text/javascript">
+	function googleTranslateElementInit()
+	{new google.translate.TranslateElement({pageLanguage: '',
+	includedLanguages: 'en,de,fr,es,nl,it,pt,pl,ja,el,zh',
+	layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+	autoDisplay: false}, 'google_translate_element');}
+</script>
+
+<script type="text/javascript" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/f.txt"></script><script type="text/javascript">
+(function($) {  // Avoid conflicts with other libraries
+
+'use strict';
+	
+	phpbb.addAjaxCallback('reporttosfs', function(data) {
+		if (data.postid !== "undefined") {
+			$('#sfs' + data.postid).hide();
+			phpbb.closeDarkenWrapper(5000);
+		}
+	});
+
+})(jQuery);
+</script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/boardannouncements.js.descarga"></script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/cleantalk.js.descarga"></script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/forum_fn.js.descarga"></script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/ajax.js.descarga"></script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/jquery-ui.js.descarga"></script>
+<script src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/collapse.js.descarga"></script><div id="goog-gt-tt" class="skiptranslate" dir="ltr"><div style="padding: 8px;"><div><div class="logo"><img src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/translate_24dp.png" width="20" height="20" alt="Google Traductor de Google"></div></div></div><div class="top" style="padding: 8px; float: left; width: 100%;"><h1 class="title gray">Texto original</h1></div><div class="middle" style="padding: 8px;"><div class="original-text"></div></div><div class="bottom" style="padding: 8px;"><div class="activity-links"><span class="activity-link">Sugiere una traducción mejor</span><span class="activity-link"></span></div><div class="started-activity-container"><hr style="color: #CCC; background-color: #CCC; height: 1px; border: none;"><div class="activity-root"></div></div></div><div class="status-message" style="display: none;"></div></div>
+
+
+
+
+
+<div class="goog-te-spinner-pos"><div class="goog-te-spinner-animation"><svg xmlns="http://www.w3.org/2000/svg" class="goog-te-spinner" width="96px" height="96px" viewBox="0 0 66 66"><circle class="goog-te-spinner-path" fill="none" stroke-width="6" stroke-linecap="round" cx="33" cy="33" r="30"></circle></svg></div></div><iframe frameborder="0" class="goog-te-menu-frame skiptranslate" title="Widget de idiomas del Traductor" style="visibility: visible; box-sizing: content-box; width: 152px; height: 263px; display: none;" src="./(SOLUCIONADO) Como cambiar permisos en _var_www - MX Linux Forum_files/saved_resource.html"></iframe></body></html>

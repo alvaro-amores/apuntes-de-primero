@@ -1,0 +1,188 @@
+1.cual de las sigueintes no es un regla de oro de la seguridad electica¿?
+desconectar instalacion.
+prevenir realimentacion
+cortocircuitar y poner a tierra la instalacion
+separacion de circuitos.esta
+
+
+2el daño laboral segun el origen de la patologia puede ser:
+patalogia especifica inespecifica patologia emergente.esta
+
+
+3.el grupo 4 de enfermedad profesional corresponde a
+inhalación de sustancias y agentes no comprendidos en otros apartados.esta
+enfermades por agentes biologicos
+enfermedad causada por agente fisico
+enfermedad de la piel causada por sustancias y agente no incluidos en otros apartados
+
+4en la actualidad segun el consejo europeo 2015 se debe emplear la maniobra denomindada:
+cubito supino
+frente menton. esta
+posicion de seguridad
+ninguna
+
+5en los lactantes se aplica el masaje solo con dos dedos a una distancia correspondiente a un dedo bajo la linea de los pezones
+al menos:
+90vpm
+110vpm
+95vpm
+100vpm.esta
+
+
+6es el conjunto de tecnicas que actuan sobre los riesgos intentando erradicarlo o disminuirlo 
+para evitar accidentes:
+seguridad en el trabajo.esta
+seguridad y salud en el trabajo
+salud en el trabajo
+salud en el trabajo
+
+
+7existen mecanismos que permiten realizar tareas de extincion dependiendo del tipo 
+que se escoja nos encontraremos ante dos sistemas:
+instalaciones fijas
+instalaciones fija y portatiles.esta
+eventuales y portatiles
+evntuales y moviles
+
+8la clasificacion de las vibraciones es la siguiente:
+de frecuencia muy baja inferiores a dos hz.esta
+frecuncia baja inferior a dos hz
+frecuencia extremadamente baja inferior a dos hz
+alta frecuencia superior a dos hz
+
+
+9las etapas de la evaluacion de riesgos correspnde a:
+analisis de riesgos y gestion de riesgo
+verificacion de riesgos y valoracion de riesgos
+analis de riesgo y valoracion de riegos. esta
+ninguna
+
+
+10los distintos tipos de calzado que podemos encontrar
+en funcion de la proteccion que se persiga son:(omito la palabra calzado)
+calzado de seguridad, proteccion, trabajo.esta
+seguridad, proteccion
+proteccion trabajo agua
+seguridad proteccion y agua
+
+
+11los signos d euna parada cardiorespiratoria son:
+perdida de conocimiento pupilas dilatadas piel palida o cianotica ausencia de pulso y respiracion.esta
+
+
+
+12pasa por trabajar a tensiones consideradas inocuas
+mediante el empleo de transformadores que reduzcan la tension a 50 voltios en locales secos y a 24 voltios en zonas humedas
+a esto se denomina:
+aplicar tensiones de seguridad.esta
+separacion de circuito
+doble aislamiento
+toma de tierra
+
+
+
+13la piel de los trabajadores en el desempeño de sus actividades puede estra en contacto con agentes quimicos, biologicos, de tª o friccion, todas esta situaciones son un riesgo para la salud y pueden provocar enfermedades en la piel. Los elementos de protección para actuar ante estos riesgos suelen ser;
+a) Guantes, botas, cinturones, sombreros, cremas y pomadas
+b) Guantes, botas, sombreros y cremas 
+c) Guantes, botas, sombreros  y pomadas
+d) Guantes, botas, sombreros, cremas y pomadas(correcta)
+
+
+
+
+
+
+[16:43, 27/5/2021] Harol Ifp: Son las medidas de protección que se adoptan en los edificios e instalaciones de los locales donde se desarrollan las tareas
+[16:44, 27/5/2021] Harol Ifp: Protección estructural
+
+UNIDAD 7:
+
+1.los organismos e instituciones autonomicos realizan funciones similares a las que ya se han definido para el ambito nacional en concreto las del:
+b) insst y las del cnsst
+2.la clasificacion de vibraciones es la siguiente:
+a) de frecuencia muy baja,inferiores a 2 HZ
+3.los tres aspectos del estado de salud son:
+a)fisico,psiquico y social
+4.en lo que respecta a las protecciones relacionadas con el ruido, se ha de proporcionar al trabajador
+la informacion y formacion para combatir el riesgo:
+b) a partir de 80 db de npa
+5.tecnicas que estudian la relacion entre el empleado y sus tareas mediante
+la adaptacion de las condiciones del empleo a las caracteristicas fisiolicas
+y psicologicas del trabajador:
+a) ergonomia
+6.existen en el momento en el que aparecen una causa y un efecto que tienen una
+relacion clara con la actividad laboral y el daño corporal que se sufre, en este grupo
+se encuentran las enrfemedades profesionales como los accidentes de trabajo:
+a)patologias especificas
+UNIDAD 8:
+7.el conjunto de maniobras que combinan la respiracion artidicial y el masaje cardiaco cuando
+se produce una parada cardiorespiratoria es:
+c) rcp
+8. las fases del sistema de prevencion son:
+a)identificacion/evaluaccion de riesgos,planificacion,ejecuccion y seguimiento de lo planificado,control y mejora
+9. se denomina obligacion del trabajador de caracter subsidiario:
+a)el trabjador debe utilizar los epi suministrados por el empresario cuando los riesgos
+no sean evitables o limitables por medios tecnicos de proteccion colectiva.
+10.son las medidas que se adoptan en materia de proteccion en lo que respecta a los
+edificios e intalaciones de los locales donde se desarrollan las tareas:
+a)proteccion estructural
+11.las etapas de evaluacion de riesgos corresponde a:
+c) analisis de riesgos y valoracion de riesgos
+12. el documento mediante el cual se lleva a cabo la integracion de la actividad
+preventiva dentro del sistema general de gestion de la empresa, establecimiento
+la politica de prevencion de riesgos laborales de esta corresponde a:
+a) plan de prevencion de riesgos laborales
+13.las reglas de oro de la seguridad electrica son:
+d)desconectar la instalacion, prevenir cualquier posible realimientacion, comprobar la ausencia de tension, cortocircuitar y poner a tierra la instalacion, proteger y señalizar
+14.la valoracion del riesgo esta compuesto por:
+d) ninguna es correcta (son trivial, tolerable, moderado, importante, intolerable
+15.el objetivo de prevenir la aparicion de enfermedades profesionales originadas por contaminentes
+fisicos quimicos o biologicos corresponde a:
+d)higiene industrial
+16.las medidas que deben adoptarse para intentar evitar los contactos directos son:
+alejar las partes activas de la instalacion, evitar un deficiente mantenimiento o manipulacion, completar las medidas con interruptores diferenciales
+17.las personas que intervienen de forma inmediata en la emergencia para
+controlarla con los medios de que disponga y evitar que se extienda, corresponde a:
+b)equipo de primera intervencion 
+18.	
+Se constituye en empresas con 50 o más trabajadores, formado, a partes iguales, por los delegados de prevención y el empresario o sus representantes.
+c) comite de seguridad y salud
+19.Dentro del plan de emergencias, estan la clasificación de las emergencias que son:
+conato de emrgencia, emergencia parcial, emergencia general.
+20.Con respecto a las prioridades de atención a los heridos, las lesiones oculares corresponden a::
+c) quinta intervencion
+21.El empresario, en referencia al artículo 20 de la LPRL, debe elaborar:
+c) plan de emergencia
+22.La definición, "La situación de emergencia afecta a una zona concreta de la empresa y es perfectamente controlable por los equipos de intervención", corresponde a:
+c)conato de emergencia
+23.El empresario está obligado por ley a analizar las posibles emergencias y adoptar las medidas necesaria en materia de primeros auxilios y debe determinar los recursos materiales y humanos necesarios, en función de:
+d)la siniestralidad, el tipo de actividad, el numero de empleados, los factores de riesgo mas comunes.
+la puede poner desordenada
+24.Los niveles de información a los que debe tener acceso el trabajador son:
+d) riesgos generales del centro del trabajo y riesgos no especificos del puesto de trabajo
+25.	
+Cuando la situación ponga en riesgo la integridad de los trabajadores, se procede al desalojo de las instalaciones. En tales casos, debe prepararse un plan que contemple que se deben fijar los posibles lugares donde se puedan originar emergencias, corresponde a:
+a)origen de evacuacion
+26.Se realizan a través de un programa de mantenimiento y de seguridad para garantizar el correcto estado de instalaciones y equipos.
+c)revisiones periodicas de equipos de trabajo
+27.	
+El grupo 4 de enfermedad profesional corresponde a:
+a) Enfermedades causadas por inhalación de otras sustancias y agentes no incluidos en otros grupos.
+28.
+El daño laboral según el origen de la patología pueden ser:
+a) Patologías específicas, Patologías inespecíficas y Patologías emergentes.
+29.	
+No se considera accidente:
+
+Respuestas:	
+b) Por fuerza mayor extraña al trabajo
+
+c) Por dolo del trabajador
+
+Correcto 
+d) Todas las respuestas son correctas()
+
+a) Por imprudencia temeraria
+
+30.Es el conjunto de técnicas que actúan sobre los riesgos intentando erradicarlos o disminuirlos para evitar que se produzcan accidentes
+a) La seguridad en el trabajo

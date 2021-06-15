@@ -1,0 +1,15 @@
+tcp-http= puerto 80
+https=443= http + tls
+tcp-ssh=22
+tcptelnet=23
+tcp-smtp=25
+udp-dns=53=dime quien usa www.... y espera respuesta si no llega supone que se ha perdido y vuelve a preguntar
+a otro.
+ftp=20 y 21 una para enviar y otro para recibir( no es encriptado)
+pop=110
+imap
+cualquier protocolo puede hablar sobre cualquier puerto
+cuando hablamos
+tcp=es orientada a la conexion
+udp=paquetes
+https://es.wikipedia.org/wiki/Protocolo_de_transferencia_de_hipertexto interes

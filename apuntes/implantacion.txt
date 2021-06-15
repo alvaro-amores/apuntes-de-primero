@@ -1,0 +1,131 @@
+IPLANTACION REAL:
+hay muchas formas de acometer una instalacion la que hace el no tiene que ser la unica
+cliente=usuario la persona que te encarga la implementacion
+llamamos cliente a la persona que nos hace la demanda...cliente,usuario,jefe
+ el objetivo de la reunion es aclarar que hay que hacer OBTENER INFORMACION
+ obtener los requisitos tanto de usuario como de hardware
+
+1. planificacion-la reunion necesita preparacion con un guion establecido preguntar todo lo necesario
+nosotros implantaremos SO(no hardware):
+equipos disponibles:
+servidor
+pc clientes
+impresoras
+sistemas de copia de seguridad
+
+
+sistema operativo a instalar:
+requisitos que debe tener el SO
+esta deicidido el sistema operativo a implantar¿?
+se prefiere so de pago o libre¿? windows o linux¿?
+saber si se instala dominio o no
+decidir version junto con el cliente
+
+configuracion del dominio:
+necesario instalar dominio¿?-si siempre que sea una red centralizada(gestion centralizada)
+nombre del dominio
+y resto de datos de configuracion del dominio
+prerrequisito configuracion de red ip fija..etc
+configuracion de la estructura organizativa:
+saldra el arbol de dominios o bosque
+¿todo el mundo tendra acceso a los mismos documentos hay restricciones de acceso por grupos ¿cuales?
+ de aqui deben salir los grupos usuarios y su organizacion
+¿cada departamento tiene su propio sistema de documentacion?
+(suele ser si)
+¿que grupos podriamos considerar que funcionan como un todo?
+de aqui saldran las posibles unidades organizativas(nombres)
+esta fase la damos por concluida cuando tenemos una idea clara del arbol de la organizacion
+
+
+configuracion de las politicas de la empresa: de aqui saldra la configuracion de las gpo:
+¿ hay alguna restriccion que quieres que la gente no haga?-preguntar por posibles restricciones
+que debemos prohibir en la red, anotar las ideas y estar siempre preparados para cambios en este apartado
+porque
+
+-copias de seguridad
+-recursos compartidos:
+que recursos estarian comapartidos especialmente carpetas/discos e impresoras
+no hay que olvidar que grupos tienen acceso a que recursos
+
+2.reunion con el cliente:
+de aqui nos tenemos que llevar claro varias cosas, que tenemos que hacer 
+ cuando tenemos que hacer y cuanto tiempo tenemos que hacer(plazos)
+cuanto nos va a costar¿?(siempre que tengamos responsabilidad en ello)
+3. plan de implantacion:
+refleja el como vamos a resolver el problema, como vamos a aabordar la implantacion, no se toca en la reunion
+ya que esto depende de nosotros es nuestra responsabilidad, salvo que el cliente tenga que validar nuestro plan
+
+el pan de implantacion va desde la  no documentacion (extremo1) hasta la documentacion total de todo(extremo2) depende del caso o de la empresa
+se hara de una forma u otra.
+lo realmente importante es tener claro como vamos a proceder 
+(ayuda mucho una implantacion virtualizada)
+
+yo recomendaria hacer los siguientes pasos( que podrian documentarse o no)
+
+en base a los requisitos del cliente empezamos a hacer estudio de compatibilidad 
+deberemos saber especificacion SO, especificaciones del hardware.
+¿el sistema cumple los requisitos del cliente?¿el so cumple los requisitos del hardware?
+ESPECIFICACIONES so/hardware
+antes de instalacion, para solucionar problemas relacionado con la instalacion hacer pruebas
+de instalacion virtualizada del mismo software que se va implantar en la real. incluyendo todas las configuraciones que salieron a luz durante la reunion
+y al hacer esto puede que surjan dudas
+llamada al cliente para reportar posibles problemas de requsitos y solventar dudas
+el punto actual seria el mismo que antes de la instalacion actualizada pero con las cosas mas claras
+ aqui despues de la virtualizacion diseñaremos la bateria de pruebas.
+
+podemos entonces hacer una lista con los detalles de la configuracion que debemos implantar
+esta lista es:
+-compras(licencias, hardware en su caso...etc)
+-instalacion
+-configuraciones basicas(escritorio, usuarios locales, cortafuegos, anti-virus etc)
+-instalacion de roles incluyendo AD
+-promocion de de servidor a controlador del dominio 
+-configuracion de usuarios
+-configuracion de equipos
+-configuracion de grupos 
+-creacion de UO
+-asignacion o distribucion de usuarios equipos y grupos en unidades organizativas 
+-configuracion de GPO y vinculacion de gpos
+-configuracion de recursos compartidos
+-configurar permisos y seguridad
+-copias de seguridad organizacion de soporte para copias de seguridad.
+-
+
+
+4.implantacion:
+comprobaremos la disposicion de equipos (estar seguros de que el hardware esta donde debe estar, seamos nosotros o no los repsonsables esto implica:
+recoger materiales, cargar coche, montar
+
+
+
+
+- aplicar bateria de pruebas: incluyendo conectividad , rendimiento, disponibilidad
+-correcion de errores puesta punto y  documentacion a generar en caso necesario o requerido manuales de procedimientos como hacer las cosas
+y documentos de instalacion y configuracion, recomendaciones
+
+
+en cada uno de los pasos anteriores deberemos de tener en cuenta:
+1debemos comprobar si el resultado obtenido coincide con el esperado
+si coincide todo ok
+si no ¿se debe al emplazamiento pero todo es normal?
+si todo ok
+no revision
+pruebas: tenmos dos opciones:
+probar funcionamiento y requerimientos en cada paso
+probarlo todo al final
+2.las pruebas son de dos tipos:
+funcionamiento
+ajuste requerimiento
+cuando no hay problema de funcionamiento no significa que todo valla bien
+puede haber un problema de ajuste y requerimeinto es decir algo que no funciona como el cliente queria
+pero puede que el funcionamiento no falle
+3revisar la bateria de pruebas completa
+
+
+
+5 validacion:
+el cliente nos dice si todo esta bien el ok inicial(no olvidemos que puede haber cambio)
+el cliente manda, lo ideal es recorrer el sistema y comprobar todos los puntos con el
+
+
+

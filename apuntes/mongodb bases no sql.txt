@@ -1,0 +1,36 @@
+json= la j es de javascript.
+mongodb no tiene joins porque no usa el modelo relacional,
+en mongo(formato json) no tienen porque coincidir los datos no como en sql que todo digue un orden
+por ejemplo nombre, apellido, calle, telefono,
+en mongodb podriamos meter cualquier cosa despues
+en una base de datos no sql guardamos un documento, no un registro un fichero en formato json
+en maquinas sql para mas rendimientos mas(mejor) hardware, sin embargo en mongodb podemos hacer que
+el rendimiento poniendo agregando otro dispositivo. por ejemplo poner una maquina igual al lado
+almacenamientode registros en mongodb= un clave y su valor alfanumerico ejemplo como un array
+solo puede reconocerlos "buscarlos" por esta clave
+
+
+base de datos basadas en documentos: documentos en formato json la referencia es mongodb.
+dos tipos clave y valor y orientadas a documento json
+json (javascript object notation)
+javascript es su entorno de origen
+una peticion http es un documento en el que va cierta información y ciertos datos
+(texto) esta informacion la envia el ordenador(navegador) y la procesa apache y devuelve un html(normalmente)
+tambien puede devolvernoslo en formato json(las aplicaciones mas modernas te devuelven json)(entre el navegador y el apache)
+php=siempre o html(o casi siempre)
+json se usa para hablar de aplicacion a aplicacion.
+en javascript var ya no se debe usar se usaria let o const(solo tiene vigor en el bloque donde estes delante de la llavecita)
+json no es un lenguaje de marcas, ni de programacion ni un documento
+dtd especifica que datos van en que sitios,ejemplo una persona tiene un nombre un apellido y una edad.
+un objeto es algo que empieza por una llave y acaba por una llave
+un valor puede ser string number object array true false null
+array:empieza y acaba por corchetes y es una secuencia ordenada de valores
+json(el orden no es importante)
+
+
+
+mongo: el documento es como una linea es lo minimo en mongo db
+diferencia entre json puro y json mongo db las claves tambien llevan comillas
+
+las bases de datos nosql son mas rapidas.
+

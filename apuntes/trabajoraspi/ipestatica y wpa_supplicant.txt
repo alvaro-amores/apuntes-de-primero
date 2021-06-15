@@ -1,0 +1,18 @@
+ip estatica:
+route -n para saber nuestro gateway ej:192.168.o.1
+ahora buscamos las ip de los name server con cat  /etc/resolv.conf ej 192.168.0.1
+seditamos esl archivo para usar ip estatico sudo nano  /etc/dhcpcd.conf
+nano para editar archivos sudo para modo administrador
+interface eth0
+static ip_address=192.168.10.11/24
+static routers=192.168.0.1 (en wlan0 no hay que poner default gateway porque te lo da por dhcp)
+static domain_name_servers=192.168.0.1 8.8.8.8(puedes haber aqui otra ip de otro name server)
+(en el ejercicio de sergio solo pusimos esto:)
+interface eth0
+static ip_address=192.168.10.11/24 ni siquiera gateway, nos lo da en el momento que nos conectemos
+tampoco pusisimos nada en wlan0 porque en el momento que entremos a clase se conectara y nos dara dhcp(lo 
+que yo sabia!!!!!!!!)
+wpa_supplicant:
+/etc/wpa_supplicant/wpa_supplicant.conf
+y poner nombre del router(IFP) y contraseña
+tambien se puede hacer por raspi-config
